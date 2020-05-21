@@ -1,1 +1,39 @@
-
+.navbar {
+    margin-right: 
+}
+.navbar-brand {
+    padding: 0;
+}
+.navbar-toggler {
+    margin-right: 50px;
+}
+.collapse li {
+    margin-right: 4rem;
+    margin-left: 1rem;
+}
+.navbar-nav {
+    margin-left: 90px;
+}
+.blog-section{
+    background-color: #c6c8ca;
+}
+.blog {
+    width: 75%;
+    margin: auto;
+    padding-top: 2rem;
+}
+.blog hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.list-group {
+    margin: 4rem 0;
+}
+.d-flex h3{
+    margin-left: 60px;
+}
+.d-flex .content {
+    margin-left: 130px;
+}
