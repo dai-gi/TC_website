@@ -14,7 +14,7 @@
 .navbar-nav {
     margin-left: 90px;
 }
-.blog-section{
+.blog-section {
     background-color: #c6c8ca;
 }
 .blog {
@@ -36,4 +36,31 @@
 }
 .d-flex .content {
     margin-left: 130px;
+}
+.container-fluid hr {
+    width: 100%;
+}
+.text-center{
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.img-flex-3 {
+    margin-left: 90px; 
+    margin-bottom: 5rem;
+}
+.img-flex-3 .img1 {
+    margin-right: 40px;
+}
+.img-flex-3 .img2 {
+    margin-left: 80px;
+}
+.img-flex-3 .img3 {
+    margin-left: 70px;
+}
+footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+}
+footer h5 {
+    margin-bottom: 2rem;
 }
