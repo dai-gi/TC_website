@@ -1,3 +1,29 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #fed136;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #fed136;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #fed136;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -15,6 +41,16 @@ body {
     text-align: left;
     background-color: #fff;
 }
+a {
+    color: #fed136;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    color: #e6b301;
+    text-decoration: underline;
+}
+
 
 #wrapper {
     display: flex;
@@ -25,11 +61,13 @@ body {
 .blog-section {
     background-color: #c6c8ca;
 }
+
 .blog {
     width: 75%;
     margin: auto;
     padding-top: 2rem;
 }
+
 .blog hr {
     border-top: 2px solid #b4b4b4;
     width: 95%;
@@ -40,29 +78,20 @@ body {
 .d-flex h3{
     margin-left: 60px;
 }
+
 .d-flex .content {
     margin-left: 130px;
 }
+
 .container-fluid hr {
     width: 100%;
 }
+
 .text-center{
     margin-top: 70px;
     margin-bottom: 70px;
 }
-.img-flex-3 {
-    margin-left: 90px; 
-    margin-bottom: 5rem;
-}
-.img-flex-3 .img1 {
-    margin-right: 40px;
-}
-.img-flex-3 .img2 {
-    margin-left: 80px;
-}
-.img-flex-3 .img3 {
-    margin-left: 70px;
-}
+
 footer {
     background-color: #3f3f3f;
     color: #d5d5d5;
