@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="630" height="450" viewBox="0 0 630 450">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 200px;
+        fill: #fed136;
+        font-family: "Brush Script MT";
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <text id="TC" class="cls-1" transform="translate(-44.733 340.871) scale(2.302 2.308)">TC</text>
+</svg>
