@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -254,6 +260,61 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 54, 0.5);
 }
 
+/* About */
+
+.page-section {
+    padding: 6rem 0;
+}
+.page-section h1.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.page-section hr.section-subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
+}
+
+.fa-circle {
+    color: #fed136;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 9rem 0;
+    }
+}
+
+::selection {
+    background: #fed136;
+    text-shadow: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    line-height: 1.75;
+}
+
+/* Works */
+
+.page-section {
+    padding: 6rem 0;
+}
+.page-section h1.section-heading .works {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.page-section hr.section-subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
+}
+
 
 
 
@@ -274,23 +335,6 @@ fieldset:disabled a.btn {
     width: 95%;
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-
-.d-flex h3{
-    margin-left: 60px;
-}
-
-.d-flex .content {
-    margin-left: 130px;
-}
-
-.container-fluid hr {
-    width: 100%;
-}
-
-.text-center{
-    margin-top: 70px;
-    margin-bottom: 70px;
 }
 
 footer {
