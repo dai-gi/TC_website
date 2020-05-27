@@ -11,6 +11,10 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
 body {
     margin: 0;
     font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -22,12 +26,11 @@ body {
     background-color: #fff;
 }
 
-/* Navigation */
 
+/* Navigation */
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color:　#000000;
 }
 
 #mainNav .navbar-toggler {
@@ -103,7 +106,6 @@ body {
 }
 
 /* wrapper */
-
 #wrapper {
     display: flex;
     flex-direction: column;
@@ -111,7 +113,6 @@ body {
 }
 
 /* header Image */
-
 header.masthead {
     padding-top: 10.5rem;
     padding-bottom: 6rem;
@@ -138,6 +139,10 @@ header.masthead .masthead-heading {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+img::selection {
+    background: transparent;
+}
+
 @media (min-width: 768px) {
     header.masthead {
         padding-top: 17rem;
@@ -158,7 +163,6 @@ header.masthead .masthead-heading {
 }
 
 /* header TELL ME MORE btn */
-
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -261,7 +265,6 @@ fieldset:disabled a.btn {
 }
 
 /* About */
-
 .page-section {
     padding: 6rem 0;
 }
@@ -300,11 +303,10 @@ p {
 }
 
 /* Works */
-
 .page-section {
     padding: 6rem 0;
 }
-.page-section h1.section-heading .works {
+.page-section h1.section-heading {
     font-size: 2.5rem;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -314,31 +316,13 @@ p {
     font-weight: 400;
     margin-bottom: 4rem;
 }
-
-
-
-
-/* 既存 */
-
-.blog-section {
-    background-color: #c6c8ca;
+.t-heading{
+    background-color: #f5f5f5;
 }
 
-.blog {
-    width: 75%;
-    margin: auto;
-    padding-top: 2rem;
-}
-
-.blog hr {
-    border-top: 2px solid #b4b4b4;
-    width: 95%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
+/* footer */
 footer {
-    background-color: #3f3f3f;
+    background-color: #212529;
     color: #d5d5d5;
     margin-top: auto;
 }
