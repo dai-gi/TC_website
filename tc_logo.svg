@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="630" height="450" viewBox="0 0 630 450">
+<svg xmlns="http://www.w3.org/2000/svg" width="2759" height="450" viewBox="0 0 2759 450">
   <defs>
     <style>
       .cls-1 {
@@ -7,7 +7,11 @@
         font-family: "Brush Script MT";
         font-style: italic;
       }
+
+      .cls-2 {
+        font-size: 130px;
+      }
     </style>
   </defs>
-  <text id="TC" class="cls-1" transform="translate(-44.733 340.871) scale(2.302 2.308)">TC</text>
+  <text id="Technology_Cconfidence" data-name="Technology Cconfidence" class="cls-1" transform="translate(-44.733 340.871) scale(2.302 2.308)">T<tspan class="cls-2">echnology </tspan>C<tspan>confidence</tspan></text>
 </svg>
