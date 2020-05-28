@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ja">
 
@@ -20,9 +21,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -141,47 +141,8 @@
                 </div>
             </div>
         </section>
-
-        <!-- Blog -->
-        <section class="page-section" id="blog">
-            <div class="container">
-                <div class="container-fluid">
-                    <div class="row text-center my-5">
-                        <div class="col-12">
-                            <h1 class="section-heading text-uppercase works">Blog</h1>
-                            <hr class="section-subheading text-muted">
-                        </div>
-                    </div>
-                    <table class="table table-hover">
-                        <tr class="bg-light">
-                            <th>日付</th>
-                            <th>題名</th>
-                        </tr>
-                        <tr>
-                            <td>2020.05.27</td>
-                            <td>今日の現場について</td>
-                        </tr>
-                        <tr>
-                            <td>2020.05.26</td>
-                            <td>今日の現場について</td>
-                        </tr>
-                        <tr>
-                            <td>2020.05.25</td>
-                            <td>今日の現場について</td>
-                        </tr>
-                        <tr>
-                            <td>2020.05.24</td>
-                            <td>今日の現場について</td>
-                        </tr>
-                        <tr>
-                            <td>2020.05.23</td>
-                            <td>今日の現場について</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
+        {% block content %}
+        {% endblock %}
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
