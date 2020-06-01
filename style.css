@@ -3,8 +3,20 @@
 }
 .nav .nav-item .nav-link {
     background-color: #333533;
-    color: #dcdcdc;
 }
-/* .container .nav .nav-item {
-    color: #ffffff;
-} */
+ul li a {
+    color: #e8eddf;
+}
+ul li a:hover {
+    color: #f5cb5c;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #f5cb5c;
+}
+.navbar-toggler {
+    color: #e8eddf;
+    background-color: #f5cb5c;
+}
+i {
+    color: #f5cb5c;
+}
