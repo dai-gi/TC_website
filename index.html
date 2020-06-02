@@ -14,71 +14,68 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body data-spy="scroll" data-target="#Navbar" data-offset="0">
+<body data-spy="scroll" data-target="#Navbar" data-offset="100">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="#" alt="" /></a>
-            <button class="navbar-toggler navbar-toggler-light" type="button" data-toggle="collapse" data-target="#Navbar">Menu<i class="fas fa-bars ml-1"></i></button>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#Navbar"
+                aria-controls="Navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="nav nav-pills flex-column flex-lg-row ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#works">Works</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contanct</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#login">Log In</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#signup">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">概要</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#works">案件</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">ブログ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#login">ログイン</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup">サインイン</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Header -->
-    <header class="masthead">
-        <div class="container">
-        </div>
+    <header>
+        <img class="img-fluid" src="main - image.png" alt="">
     </header>
 
     <div id="wrapper">
         <!-- About -->
         <section class="page-section" id="about">
             <div class="container">
-                <div class="text-center">
-                    <h1 class="section-heading text-uppercase">About</h1>
-                    <hr class="section-subheading text-muted">
+                <div class="text-center col-12 mb-5">
+                    <h1 class="section-heading">概要</h1>
+                    <hr>
                 </div>
-                <div class="row text-center my-5 py-5">
-                    <div class="col-md-12">
+                <div class="row text-center">
+                    <div class="col-12 mb-5">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
                                 class="fas fa-hard-hat fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">TCとは？
-                        </h4>
-                        <span class="tech">T...Technique（技術）</span><span>困難な搬入経路や場面でも柔軟に対応する技術</span><br>
-                        <span class="conf">C...Confidence（信頼）</span><span>その技術を活かし、お客様に安心して頂ける、そしてそこから生まれる信頼</span><br>
-                        <span>Technique（技術）・ Confidence（信頼）両方を追求し続けるため、2つの頭文字を取り<span class="tc">TC</span>と名付けました。</span>
+                        <h4 class="my-3">TCとは？</h4>
+                        <span class="text-muted">新築・改修工事現場をメインに建築資材の荷揚げをやっております。</span>
                     </div>
                     <div class="col-md-12">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
                                 class="fas fa-laptop fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime
-                            quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3">アプリケーションについて</h4>
+                        <p class="text-muted">TCメンバーでの情報共有・管理を目的に作成しました。</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Works -->
-        <section class="page-section bg-light" id="works">
-            <div class="container">
+        <section class="page-section" style="background-color: #F0F5F6;" id="works">
+            <div class="works-content container">
                 <div class="container-fluid">
-                    <div class="row text-center my-5">
-                        <div class="col-12">
-                            <h1 class="section-heading text-uppercase works">Works</h1>
-                            <hr class="section-subheading text-muted">
+                    <div class="row text-center">
+                        <div class="col-12 mb-5">
+                            <h1 class="section-heading">案件</h1>
+                            <hr>
                         </div>
                     </div>
-                    <table class="table table-hover my-5">
+                    <table class="table table-hover">
                         <tr class="t-heading">
                             <th>No.</th>
                             <th>案件</th>
@@ -124,10 +121,10 @@
         <section class="page-section" id="blog">
             <div class="container">
                 <div class="container-fluid">
-                    <div class="row text-center my-5">
-                        <div class="col-12">
-                            <h1 class="section-heading text-uppercase works">Blog</h1>
-                            <hr class="section-subheading text-muted">
+                    <div class="row text-center">
+                        <div class="col-12 mb-5">
+                            <h1 class="section-heading">ブログ</h1>
+                            <hr>
                         </div>
                     </div>
                     <table class="table table-hover">
@@ -160,7 +157,7 @@
             </div>
         </section>
 
-        
+
         <!-- Footer -->
         <footer class="footer py-4">
             <div class="container">
@@ -182,8 +179,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
-    <!-- Core theme JS
-    <script src="scripts.js"></script> -->
+
 </body>
 
 </html>
