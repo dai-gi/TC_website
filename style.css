@@ -1,7 +1,10 @@
 /* Navigation */
-.navbar {
+nav{
     color: #fefcfb;
     background-color: rgba(10, 17, 40, 0.7);
+}
+.navbar {
+    padding: 1rem;
 }
 .navbar-toggler{
     border-color: #fefcfb;
@@ -27,24 +30,39 @@ ul li a:hover {
 i {
     color: #034078;
 }
-.fa-bars {
-    color: #fefcfb;
-}
-.page-section {
-    margin: 150px 0;
-}
 hr {
     border-top: 2px solid #6c757d;
     width: 70%;
 }
-.works-content {
-    background-color: #F0F5F6;
+.page-section {
+    padding: 7rem 0;
 }
-
+.matter {
+    padding: 2rem 0 5rem;
+}
+.matter-list {
+    padding-bottom: 4rem;
+}
+.blog {
+    padding: 2rem 0 5rem;
+}
+.blog-list {
+    padding-bottom: 4rem;
+}
+thead {
+    color: #fefcfb;
+    background-color: #034078;
+}
+.table-hover {
+    background-color: #fefcfb;
+}
 
 
 /* Footer */
 footer {
     color: #fefcfb;
     background-color: #0A1128;
+}
+footer .container {
+    padding: 1rem;
 }
