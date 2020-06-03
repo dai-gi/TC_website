@@ -49,12 +49,15 @@ hr {
 .blog-list {
     padding-bottom: 4rem;
 }
+table tr{
+    
+}
 thead {
     color: #fefcfb;
     background-color: #034078;
 }
-tbody tr {
-    background-color: none;
+tbody tr td {
+    padding: 3rem;
 }
 
 
