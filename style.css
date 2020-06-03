@@ -53,8 +53,8 @@ thead {
     color: #fefcfb;
     background-color: #034078;
 }
-.table-hover {
-    background-color: #fefcfb;
+tbody tr {
+    background-color: none;
 }
 
 
