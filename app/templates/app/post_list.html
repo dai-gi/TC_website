@@ -3,23 +3,25 @@
 {% block content %}
 <section class="page-section" id="blog">
     <div class="container">
-        <div class="container-fluid">
-            <div class="row text-center my-5">
-                <div class="col-12">
-                    <h1 class="section-heading text-uppercase works">Blog</h1>
-                    <hr class="section-subheading text-muted">
-                </div>
+        <div class="row text-center blog-list">
+            <div class="col-12 blog">
+                <h1 class="section-heading">ブログ</h1>
+                <hr>
             </div>
             <table class="table table-hover">
-                <tr class="bg-light">
-                    <th>日付</th>
-                    <th>題名</th>
-                </tr>
+                <thead>
+                    <tr class="table-heading">
+                        <th>日付</th>
+                        <th>題名</th>
+                    </tr>
+                </thead>
                 {% for post in post_list %}
-                <tr>
-                    <td>{{ post.published_date }}</td>
-                    <td>{{ post.title }}</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>{{ post.published_date }}</td>
+                        <td>{{ post.title }}</td>
+                    </tr>
+                </tbody>
                 {% endfor %}
             </table>
         </div>
