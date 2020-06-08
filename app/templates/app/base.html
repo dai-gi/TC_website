@@ -15,16 +15,18 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body>
+<body id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#navbar"><h3 class="text-light">TC</h3></a>
+            <a class="navbar-brand" href="#page-top">
+                <h3 class="text-light">TC</h3>
+            </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#Navbar"
                 aria-controls="Navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbar">
+            <div class="collapse navbar-collapse">
                 <ul class="nav nav-pills flex-column flex-lg-row ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">概要</a></li>
                     <li class="nav-item"><a class="nav-link" href="#works">案件</a></li>
@@ -50,78 +52,31 @@
                     <hr>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-6 mb-5">
+                    <div class="col-md-4">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
                                 class="fas fa-hard-hat fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">TCとは？</h4>
+                        <h4 class="my-3">TCについて</h4>
                         <span class="text-muted">新築・改修工事現場をメインに建築資材の荷揚げをやっております。</span>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
                                 class="fas fa-laptop fa-stack-1x fa-inverse"></i></span>
-                        <h4 class="my-3">アプリケーションについて</h4>
-                        <p class="text-muted">TCメンバーでの情報共有・管理を目的に作成しました。</p>
+                        <h4 class="my-3">このウェブページについて</h4>
+                        <p class="text-muted">案件・メンバーのシフト等の管理を目的に作成しています。</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
+                                class="fas fa-tools fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3">その他</h4>
+                        <p class="text-muted">建築関連についてのブログを投稿しています。</p>
                     </div>
                 </div>
             </div>
         </section>
+        {% block work-content %}
+        {% endblock %}
 
-        <!-- Works -->
-
-        <section class="page-section bg-light　my-5" id="works">
-            <div class="container">
-                <div class="row text-center matter-list">
-                    <div class="col-12 matter">
-                        <h1 class="section-heading">案件</h1>
-                        <hr>
-                    </div>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>案件</th>
-                                <th>詳細</th>
-                                <th>価格</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>〇〇〇〇〇〇案件</td>
-                                <td>〇〇〇〇〇〇搬入</td>
-                                <td>¥00000</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>〇〇〇〇〇〇案件</td>
-                                <td>〇〇〇〇〇〇搬入</td>
-                                <td>¥00000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>〇〇〇〇〇〇案件</td>
-                                <td>〇〇〇〇〇〇搬入</td>
-                                <td>¥00000</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>〇〇〇〇〇〇案件</td>
-                                <td>〇〇〇〇〇〇搬入</td>
-                                <td>¥00000</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>〇〇〇〇〇〇案件</td>
-                                <td>〇〇〇〇〇〇搬入</td>
-                                <td>¥00000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        {% block content %}
+        {% block blog-content %}
         {% endblock %}
         <!-- Footer -->
         <footer class="footer">
