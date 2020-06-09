@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<section class="page-section bg-light　my-5" id="works">
+    <div class="container">
+        <div class="row text-center matter-list">
+            <div class="col-12 matter">
+                <h1 class="section-heading">案件</h1>
+                <hr>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>案件</th>
+                        <th>詳細</th>
+                        <th>価格</th>
+                    </tr>
+                </thead>
+                <!-- <tbody>
+                    {% for work in work_data %}
+                    <tr>
+                        <td><a href="{% url 'work_detail' work.id %}">{{ work.title }}</a></td>
+                        <td>{{ work.text }}</td>
+                        <td>{{ work.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody> -->
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}
