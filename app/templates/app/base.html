@@ -17,30 +17,44 @@
 
 <body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">
-                <h3 class="text-light">TC</h3>
-            </a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#Navbar"
-                aria-controls="Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><h3 class="pr-5">TC</h3></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse">
-                <ul class="nav nav-pills flex-column flex-lg-row ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">概要</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#works">案件</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">ブログ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#login">ログイン</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#signup">サインイン</a></li>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">概要<span class="sr-only">(現位置)</span></a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link" href="#">案件</a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link" href="#">ブログ</a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link" href="#">ログイン</a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link" href="#">メンバー登録</a>
+                    </li>
                 </ul>
+                <form class="form-inline my-2 my-md-0">
+                    <input class="form-control" type="search" placeholder="検索..." aria-label="検索...">
+                </form>
             </div>
         </div>
     </nav>
-    <h1></h1>
+
     <!-- Header -->
     <header>
         <img class="img-fluid" src="../static/img/main - image.png" alt="">
+        <h1>Welcome To My Page</h1>
+        <h4>Technique and Confidence</h4>
     </header>
 
     <div id="wrapper">
@@ -74,13 +88,7 @@
             </div>
         </section>
 
-
         {% block blog %}
-        {% endblock %}
-
-
-
-        {% block work %}
         {% endblock %}
 
         <!-- Footer -->
