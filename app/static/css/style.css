@@ -70,4 +70,11 @@ header h4 {
 header .img-fluid {
     height: 345px;
 }
+.navbar-brand {
+    padding-left: 1rem;
+}
+.navbar-toggler {
+    margin-right: 1rem;
+}
+
 }
