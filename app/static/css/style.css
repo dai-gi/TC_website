@@ -47,3 +47,27 @@ footer {
     color: #fefcfb;
     background-color: #0A1128;
 }
+
+@media (max-width: 575.98px) { 
+header h1 {
+    position: absolute;
+    top: 21%;
+    left: 12%;
+    font-family: 'MS Serif';
+    font-size: 35px;
+    color: #ffffff;
+    opacity: 0.8;
+} 
+header h4 {
+    position: absolute;
+    top: 27%;
+    left: 20%;
+    font-family: 'MS Serif';
+    font-size: 22px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+header .img-fluid {
+    height: 345px;
+}
+}
