@@ -1,24 +1,25 @@
-nav{
+nav {
     background-color: rgba(9, 9, 61, 0.548);
 }
+
 nav a h3 {
     margin-bottom: 0;
 }
-header h1 {
-    position: absolute;
-    top: 45%;
-    left: 17%;
-    font-family: 'MS Serif';
-    font-size: 85px;
+
+.jumbotron {
+    background-image: url("../img/main - image.png");
+    background-size: cover;
+    background-position: center 90%;
+    height: 800px;
+}
+
+.display-1 {
+    padding-top: 230px;
     color: #ffffff;
     opacity: 0.8;
 }
-header h4 {
-    position: absolute;
-    top: 60%;
-    left: 25%;
-    font-family: 'MS Serif';
-    font-size: 50px;
+
+.display-4 {
     color: #ffffff;
     opacity: 0.8;
 }
@@ -26,55 +27,111 @@ header h4 {
 ul li a {
     color: #fefcfb;
 }
+
 ul li a:hover {
     color: #d3d3d3;
 }
+
 i {
     color: #034078;
 }
+
 hr {
     border-top: 2px solid #6c757d;
     width: 70%;
 }
+
 thead {
     color: #fefcfb;
     background-color: #034078;
 }
+
 tbody tr {
     background-color: none;
 }
+
 footer {
     color: #fefcfb;
     background-color: #0A1128;
 }
 
-@media (max-width: 575.98px) { 
-header h1 {
-    position: absolute;
-    top: 21%;
-    left: 12%;
-    font-family: 'MS Serif';
-    font-size: 35px;
-    color: #ffffff;
-    opacity: 0.8;
-} 
-header h4 {
-    position: absolute;
-    top: 27%;
-    left: 20%;
-    font-family: 'MS Serif';
-    font-size: 22px;
-    color: #ffffff;
-    opacity: 0.8;
-}
-header .img-fluid {
-    height: 345px;
-}
-.navbar-brand {
-    padding-left: 1rem;
-}
-.navbar-toggler {
-    margin-right: 1rem;
+@media (max-width: 992.98px) {
+    .jumbotron {
+        height: 750px;
+    }
+
+    .display-1 {
+        padding-top: 200px;
+        font-size: 70px;
+    }
+
+    .display-4 {
+        font-size: 35px;
+    }
+
+    .navbar-brand {
+        padding-left: 1rem;
+    }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+    }
+
+    div .col-md-4 {
+        padding-bottom: 2rem;
+    }
 }
 
+@media (max-width: 767.98px) {
+    .jumbotron {
+        height: 700px;
+    }
+
+    .display-1 {
+        padding-top: 200px;
+        font-size: 55px;
+    }
+
+    .display-4 {
+        font-size: 30px;
+    }
+
+    .navbar-brand {
+        padding-left: 1rem;
+    }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+    }
+
+    div .col-md-4 {
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .jumbotron {
+        height: 650px;
+    }
+
+    .display-1 {
+        padding-top: 250px;
+        font-size: 47px;
+    }
+
+    .display-4 {
+        font-size: 30px;
+    }
+
+    .navbar-brand {
+        padding-left: 1rem;
+    }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+    }
+
+    div .col-md-4 {
+        padding-bottom: 2rem;
+    }
 }
