@@ -1,6 +1,35 @@
 {% extends 'app/base.html' %}
 
-{% block blog %}
+{% block abw %}
+<section class="page-section py-5" id="about">
+    <div class="container">
+        <div class="text-center col-12 pb-5">
+            <h1 class="section-heading">概要</h1>
+            <hr>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
+                        class="fas fa-hard-hat fa-stack-1x fa-inverse"></i></span>
+                <h4 class="pt-2 pb-1">仕事内容</h4>
+                <span class="text-muted">新築及び、改修工事現場で使用する建築資材の搬入・搬出をメインにやっています。</span>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
+                        class="fas fa-comments fa-stack-1x fa-inverse"></i></span>
+                <h4 class="pt-2 pb-1">このサイトの目的</h4>
+                <p class="text-muted">メンバー同士での情報共有を目的に作成しています。</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x"></i><i
+                        class="fas fa-blog fa-stack-1x fa-inverse"></i></span>
+                <h4 class="pt-2 pb-1">ブログ</h4>
+                <p class="text-muted">建設業に関連する情報のブログも投稿しています。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="page-section bg-light py-5" id="works">
     <div class="container">
         <div class="row text-center matter-list">
@@ -19,7 +48,7 @@
                 {% for work in work_data %}
                 <tbody>
                     <tr>
-                        <td><a href="{% url 'work_detail' work.id %}">{{ work.title }}</a></td>
+                        <td><a class="text-dark" href="{% url 'work_detail' work.id %}">{{ work.title }}</a></td>
                         <td>{{ work.text }}</td>
                         <td>{{ work.price }}</td>
                     </tr>
@@ -32,28 +61,45 @@
 
 <section class="page-section py-5" id="blog">
     <div class="container">
-        <div class="row text-center blog-list">
-            <div class="col-12 pb-5">
-                <h1 class="section-heading">ブログ</h1>
-                <hr>
+        <div class="align-items-center">
+            {% for post in post_data %}
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <p class="card-text">これは、追加コンテンツへの自然な導入として以下のテキストをサポートする、より幅広いカード。このコンテンツはもう少し長くなる。</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                        </div>
+                        <small class="text-muted">9 分前</small>
+                    </div>
+                </div>
             </div>
-            <table class="table table-hover">
-                <thead>
-                    <tr class="table-heading">
-                        <th>日付</th>
-                        <th>題名</th>
-                    </tr>
-                </thead>
-                {% for post in post_data %}
-                <tbody>
-                    <tr>
-                        <td>{{ post.published_date }}</td>
-                        <td>{{ post.title }}</td>
-                    </tr>
-                </tbody>
-                {% endfor %}
-            </table>
+            {% endfor %}
         </div>
     </div>
 </section>
 {% endblock %}
+
+<!-- <div class="row text-center blog-list">
+    <div class="col-12 pb-5">
+        <h1 class="section-heading">ブログ</h1>
+        <hr>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-heading">
+                <th>日付</th>
+                <th>題名</th>
+            </tr>
+        </thead>
+        {% for post in post_data %}
+        <tbody>
+            <tr>
+                <td>{{ post.published_date }}</td>
+                <td>{{ post.title }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div> -->
