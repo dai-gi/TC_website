@@ -59,24 +59,24 @@
     </div>
 </section>
 
-<section class="page-section py-5" id="blog">
-    <div class="container">
-        <div class="align-items-center">
-            {% for post in post_data %}
+<section class="page-section py-5 container" id="blog">
+    <div class="row">
+        {% for post in post_data %}
+        <div class="col-4">
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                    <p class="card-text">これは、追加コンテンツへの自然な導入として以下のテキストをサポートする、より幅広いカード。このコンテンツはもう少し長くなる。</p>
+                    <h3 class="card-text">{{ post.title }}</h3>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
                             <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
                         </div>
-                        <small class="text-muted">9 分前</small>
+                        <small class="text-muted">{{ post.published_date }}</small>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}
