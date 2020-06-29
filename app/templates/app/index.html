@@ -1,6 +1,15 @@
 {% extends 'app/base.html' %}
 
-{% block abw %}
+{% block header %}
+<header class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-1 text-center">Welcome To My Page</h1>
+        <p class="display-4 text-center">Technique and Confidence</p>
+    </div>
+</header>
+{% endblock %}
+
+{% block about %}
 <section class="page-section py-5" id="about">
     <div class="container">
         <div class="text-center col-12 pb-5">
@@ -29,7 +38,9 @@
         </div>
     </div>
 </section>
+{% endblock %}
 
+{% block work %}
 <section class="page-section bg-light py-5" id="works">
     <div class="container">
         <div class="row text-center matter-list">
@@ -58,7 +69,9 @@
         </div>
     </div>
 </section>
+{% endblock %}
 
+{% block blog %}
 <section class="page-section py-5 container" id="blog">
     <div class="row">
         {% for post in post_data %}
@@ -68,8 +81,7 @@
                     <h3 class="card-text">{{ post.title }}</h3>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                            <button type="button" class="btn btn-md btn-outline-secondary"><a class="stretched-link text-light" href="{% url 'post_detail' post.id %}"></a>見る</a></button>
                         </div>
                         <small class="text-muted">{{ post.published_date }}</small>
                     </div>
@@ -81,25 +93,4 @@
 </section>
 {% endblock %}
 
-<!-- <div class="row text-center blog-list">
-    <div class="col-12 pb-5">
-        <h1 class="section-heading">ブログ</h1>
-        <hr>
-    </div>
-    <table class="table table-hover">
-        <thead>
-            <tr class="table-heading">
-                <th>日付</th>
-                <th>題名</th>
-            </tr>
-        </thead>
-        {% for post in post_data %}
-        <tbody>
-            <tr>
-                <td>{{ post.published_date }}</td>
-                <td>{{ post.title }}</td>
-            </tr>
-        </tbody>
-        {% endfor %}
-    </table>
-</div> -->
+<!--  -->

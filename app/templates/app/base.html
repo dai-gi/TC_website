@@ -19,7 +19,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top container-fluid">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <h3 class="pr-5">TC</h3>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -53,16 +53,20 @@
     </nav>
 
     <!-- Header -->
-    <header class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-1 text-center">Welcome To My Page</h1>
-            <p class="display-4 text-center">Technique and Confidence</p>
-        </div>
-    </header>
+    {% block header %}
+    {% endblock %}
 
     <div id="wrapper">
-        
-        {% block abw %}
+        <!-- About-->
+        {% block about %}
+        {% endblock %}
+
+        <!-- Work -->
+        {% block work %}
+        {% endblock %}
+
+        <!-- Blog -->
+        {% block blog %}
         {% endblock %}
 
         <!-- Footer -->
