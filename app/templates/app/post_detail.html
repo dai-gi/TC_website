@@ -1,18 +1,27 @@
+<!doctype html>
 {% extends "app/base.html" %}
 
-{% block blog %}
-
-<h2 class="my-4">{{ post_data.title }}</h2>
-<hr>
-<p>{{ post_data.published_date }} by {{ post_data.author }}</p>
-<hr>
-<p>{{ post_data.text|linebreaksbr }}</p>
-{% if user.is_authenticated %}
-    <hr>
-    <div class="d-flex mb-5">
-        <a class="btn btn-warning mr-2" href="">編集する</a>
-        <a class="btn btn-danger" href="">削除する</a>    
+{% block header %}
+<header class="jumbotron jumbotron-fluid header-img">
+    <div class="container">
+        <h1 class="display-2 text-center b-detail">Detail</h1>
     </div>
-{% endif %}
+</header>
+{% endblock %}
 
+{% block blog %}
+<div class="container blog-title">
+    <h1 class="text-center pb-4">{{ post_data.title }}</h1>
+    <hr class="mt-1">
+    <p class="text-center py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
+    <hr>
+    <p class="text-center py-5">{{ post_data.text|linebreaksbr }}</p>
+    {% if user.is_authenticated %}
+    <hr class="pt-5 mb-0">
+    <div class="d-flex mb-5">
+        <a class="btn btn-warning mr-3" href="">編集する</a>
+        <a class="btn btn-danger" href="">削除する</a>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
