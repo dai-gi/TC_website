@@ -59,6 +59,21 @@ footer {
     background-color: #0A1128;
 }
 
+
+/* post_detail */
+.header-img {
+    height: 220px;
+}
+.b-detail {
+    padding-top: 30px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+.blog-title hr {
+    border-top: 2px solid #c4c4c4;
+    width: 60%;
+}
+
 @media (max-width: 992.98px) {
     .jumbotron {
         height: 750px;
