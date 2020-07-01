@@ -1,5 +1,5 @@
 nav {
-    background-color: rgba(9, 9, 61, 0.548);
+    background-color: rgba(9, 9, 61, 0.808);
 }
 
 nav a h3 {
@@ -61,17 +61,13 @@ footer {
 
 
 /* post_detail */
-.header-img {
-    height: 220px;
-}
-.b-detail {
-    padding-top: 30px;
-    color: #ffffff;
-    opacity: 0.8;
-}
-.blog-title hr {
+.post hr {
     border-top: 2px solid #c4c4c4;
-    width: 60%;
+    width: 100%;
+}
+
+.post {
+    padding-top: 100px;
 }
 
 @media (max-width: 992.98px) {
@@ -105,7 +101,7 @@ footer {
     nav .container {
         padding: 5px 0;
     }
-    
+
     .jumbotron {
         height: 700px;
     }
@@ -136,7 +132,7 @@ footer {
     nav .container {
         padding: 0;
     }
-    
+
     .jumbotron {
         height: 650px;
     }
