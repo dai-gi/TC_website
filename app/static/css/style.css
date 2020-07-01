@@ -9,7 +9,9 @@ nav a h3 {
 nav .container {
     padding: 8px 0;
 }
-
+.dropdown-menu .dropdown-item {
+    background-color: #ffffff;
+}
 .jumbotron {
     background-image: url("../img/main - image.png");
     background-size: cover;
