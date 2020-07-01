@@ -1,21 +1,12 @@
-<!doctype html>
 {% extends "app/base.html" %}
 
-{% block header %}
-<header class="jumbotron jumbotron-fluid header-img">
-    <div class="container">
-        <h1 class="display-2 text-center b-detail">Detail</h1>
-    </div>
-</header>
-{% endblock %}
-
 {% block blog %}
-<div class="container blog-title">
-    <h1 class="text-center pb-4">{{ post_data.title }}</h1>
+<div class="container post">
+    <h1 class="pb-3">{{ post_data.title }}</h1>
     <hr class="mt-1">
-    <p class="text-center py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
+    <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
     <hr>
-    <p class="text-center py-5">{{ post_data.text|linebreaksbr }}</p>
+    <p class="py-5">{{ post_data.text|linebreaksbr }}</p>
     {% if user.is_authenticated %}
     <hr class="pt-5 mb-0">
     <div class="d-flex mb-5">
