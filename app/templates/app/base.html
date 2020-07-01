@@ -30,15 +30,23 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">概要<span class="sr-only">(現位置)</span></a>
+                        <a class="nav-link mr-1" href="#">概要<span class="sr-only">(現位置)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">案件</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="nav-work" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">案件</a>
+                        <div class="dropdown-menu mt-3" aria-labelledby="nav-work">
+                            <a class="dropdown-item text-dark" href="#">新規投稿</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">info</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="nav-info" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Info</a>
+                        <div class="dropdown-menu mt-3" aria-labelledby="info">
+                            <a class="dropdown-item text-dark" href="{% url 'post_new' %}">新規投稿</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ml-1">
                         <a class="nav-link" href="#">Log in</a>
                     </li>
                     <li class="nav-item">
@@ -47,6 +55,7 @@
                 </ul>
                 <form class="form-inline my-2 my-md-0">
                     <input class="form-control" type="search" placeholder="検索..." aria-label="検索...">
+                    <button class="btn btn-outline-light my-2 my-sm-0 ml-3" type="submit">検索</button>
                 </form>
             </div>
         </div>
