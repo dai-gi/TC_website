@@ -2,7 +2,7 @@ from .forms import PostForm
 from app.models import Post, Work
 from django.views.generic import View
 from django.shortcuts import render, redirect
-from djnago.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
@@ -20,7 +20,7 @@ class CreatePostView(LoginRequiredMixin, View):
             'form': form
         })
 
-        def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         form = PostForm(request.POST or None)
 
         if form.is_valid():
