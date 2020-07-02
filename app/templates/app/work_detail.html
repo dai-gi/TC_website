@@ -1,11 +1,22 @@
-{% extends 'app/base.html' %}
+{% extends "app/base.html" %}
 
-{% block content %}
-
-
-<p>{{ work_data.title }}</p>
-<p>{{ work_data.text }}</p>
-<p>{{ work_data.price }}</p>
-
-
+{% block work %}
+<div class="container post">
+    <h1 class="pb-3">{{ work_data.title }}</h1>
+    <hr class="mt-1">
+    <p class="py-3">{{ work_data.published_date }} by {{ work_data.author }}</p>
+    <hr>
+    <p>{{ work_data.address }}</p>
+    <p>{{ work_data.staff }}</p>
+    <p>{{ work_data.tel }}</p>
+    <p>{{ work_data.price }}</p>
+    <p>{{ work_data.content|linebreaksbr }}</p>
+    {% if user.is_authenticated %}
+    <hr class="pt-5 mb-0">
+    <div class="d-flex mb-5">
+        <a class="btn btn-warning mr-3" href="">編集する</a>
+        <a class="btn btn-danger" href="">削除する</a>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
