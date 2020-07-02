@@ -3,6 +3,10 @@ from app.models import Post, Work
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
+from functools import reduce
+from operator import and_
+
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
@@ -51,3 +55,22 @@ class WorkDetailView(View):
             'work_data': work_data
         })
 
+
+class SearchView(View):
+    def get(self, request, *args, **kwargs):
+        work_data = Work.objects.order_by('-id')
+        keyword = request.GET.get('keyword')
+
+        if keyword:
+            exclusion_list = set([' ', '　'])
+            query_list = ''
+            for word in keyword:
+                if not word in exclusion_list:
+                    query_list += word
+            query = reduce(and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in query_list])
+            work_data = work_data.filter(query)
+
+        return render(request, 'app/work_list.html', {
+            'keyword': keyword,
+            'work_data': work_data
+        })
