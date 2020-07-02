@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+{% block work %}
+<div class="row my-4">
+    <div class="col-md-8">
+        {% if keyword %}
+            <h4 class="mb-4">「{{ keyword }}」の検索結果</h4>
+        {% endif %}
+        {% for work in work_data %}
+        <div class="card mb-4 index">
+            <div class="card-body">
+                <h2 class="card-title">{{ work.title }}</h2>
+                <p class="card-text">{{ work.content|truncatechars:100 }}</p>
+                <div class="btn btn-warning">詳細</div>
+            </div>
+            <div class="card-footer text-muted">
+                {{ work.created|date }} by {{ work.author }}
+            </div>
+            <a class="stretched-link" href="{% url 'work_detail' work.id %}"></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
