@@ -3,6 +3,7 @@ from app.models import Post, Work
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import timezone
 from django.db.models import Q
 from functools import reduce
 from operator import and_
@@ -31,7 +32,8 @@ class CreatePostView(LoginRequiredMixin, View):
             post_data = Post()
             post_data.author = request.user
             post_data.title = form.cleaned_data['title']
-            post_data.content = form.cleaned_data['content']
+            post_data.text = form.cleaned_data['text']
+            post_data.published_date = timezone.now()
             post_data.save()
             return redirect('post_detail', post_data.id)
 
