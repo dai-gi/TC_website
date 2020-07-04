@@ -1,3 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 nav {
     background-color: rgba(9, 9, 61, 0.808);
 }
@@ -22,12 +38,12 @@ nav .container {
 .display-1 {
     padding-top: 230px;
     color: #ffffff;
-    opacity: 0.8;
+    font-family: 'arial black'
 }
 
 .display-4 {
     color: #ffffff;
-    opacity: 0.8;
+    font-family: 'arial black'
 }
 
 ul li a {
@@ -44,7 +60,7 @@ i {
 
 hr {
     border-top: 2px solid #6c757d;
-    width: 70%;
+    width: auto;
 }
 
 thead {
@@ -54,6 +70,10 @@ thead {
 
 tbody tr {
     background-color: none;
+}
+
+.btn-group a {
+    background-color: #034078;
 }
 
 footer {
@@ -71,6 +91,9 @@ footer {
 .post {
     padding-top: 100px;
 }
+
+/* post_form */
+
 
 @media (max-width: 992.98px) {
     .jumbotron {
