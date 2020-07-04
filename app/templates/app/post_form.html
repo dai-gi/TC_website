@@ -1,21 +1,21 @@
 {% extends "app/base.html" %}
 {% load widget_tweaks %}
 
-{% block content %}
-
-<div class="my-4">
-    <h2>投稿</h2>
+{% block blog %}
+<div class="container post">
+    <div class="pb-3">
+        <h1>投稿</h1>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="formpost py-3">
+            {% render_field form.title class="form-control" placeholder="タイトルを入力" %}
+        </div>
+        <div class="formpost pb-5">
+            {% render_field form.text class="form-control" placeholder="本文を入力" %}
+        </div>
+        
+        <button class="btn btn-warning " type="submit">投稿する</button>
+    </form>
 </div>
-
-<form method="post">
-    {% csrf_token %}
-    <div class="formpost">
-        {% render_field form.title class="form-control" placeholder="タイトルを入力" %}
-    </div>
-    <div class="formpost">
-        {% render_field form.content class="form-control" placeholder="本文を入力" %}
-    </div>
-    <button class="btn btn-warning" type="submit">投稿する</button>
-</form>
-
 {% endblock %}
