@@ -17,10 +17,20 @@ class IndexView(View):
             'post_data': post_data,
             'work_data': work_data
         })
+
+
+class PostDetailView(View):
+    def get(self, request, *args, **kwargs):
+        post_data = Post.objects.get(id=self.kwargs['pk'])
+        return render(request, 'app/post_detail.html', {
+            'post_data': post_data
+        })
+
+
 class CreatePostView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         form = PostForm(request.POST or None)
-        
+
         return render(request, 'app/post_form.html', {
             'form': form
         })
@@ -42,12 +52,48 @@ class CreatePostView(LoginRequiredMixin, View):
         })
 
 
-class PostDetailView(View):
+class PostEditView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.get(id=self.kwargs['pk'])
-        return render(request, 'app/post_detail.html', {
+        form = PostForm(
+            request.POST or None,
+            initial={
+                'title': post_data.title,
+                'text': post_data.text,
+            }
+        )
+
+        return render(request, 'app/post_form.html', {
+            'form': form
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = PostForm(request.POST or None)
+
+        if form.is_valid():
+            post_data = Post.objects.get(id=self.kwargs['pk'])
+            post_data.title = form.cleaned_data['title']
+            post_data.text = form.cleaned_data['text']
+            post_data.published_date = timezone.now()
+            post_data.save()
+            return redirect('post_detail', self.kwargs['pk'])
+
+        return render(request, 'app/post_form.html', {
+            'form': form
+        })
+
+
+class PostDeleteView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        post_data = Post.objects.get(id=self.kwargs['pk'])
+        return render(request, 'app/post_delete.html', {
             'post_data': post_data
         })
+
+    def post(self, request, *args, **kwargs):
+        post_data = Post.objects.get(id=self.kwargs['pk'])
+        post_data.delete()
+        return redirect('index')
 
 
 class WorkDetailView(View):
@@ -69,7 +115,8 @@ class SearchView(View):
             for word in keyword:
                 if not word in exclusion_list:
                     query_list += word
-            query = reduce(and_, [Q(title__icontains=q) | Q(content__icontains=q) for q in query_list])
+            query = reduce(and_, [Q(title__icontains=q) | Q(
+                content__icontains=q) for q in query_list])
             work_data = work_data.filter(query)
 
         return render(request, 'app/work_list.html', {
