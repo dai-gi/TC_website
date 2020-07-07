@@ -1,4 +1,4 @@
-from .forms import PostForm
+from .forms import PostForm, WorkForm
 from app.models import Post, Work
 from django.views.generic import View
 from django.shortcuts import render, redirect
@@ -102,7 +102,35 @@ class WorkDetailView(View):
         return render(request, 'app/work_detail.html', {
             'work_data': work_data
         })
+        
 
+class CreateWorkView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        form = WorkForm(request.POST or None)
+
+        return render(request, 'app/work_form.html', {
+            'form': form
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = WorkForm(request.POST or None)
+
+        if form.is_valid():
+            work_data = Work()
+            work_data.author = request.user
+            work_data.title = form.cleaned_data['title']
+            work_data.address = form.cleaned_data['address']
+            work_data.text = form.cleaned_data['text']
+            work_data.staff = form.cleaned_data['staff']
+            work_data.tel = form.cleaned_data['tel']
+            work_data.price = form.cleaned_data['price']
+            work_data.published_date = timezone.now()
+            work_data.save()
+            return redirect('work_detail', work_data.id)
+
+        return render(request, 'app/work_form.html', {
+            'form': form
+        })
 
 class SearchView(View):
     def get(self, request, *args, **kwargs):
