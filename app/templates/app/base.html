@@ -30,16 +30,16 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link mr-1" href="#about">概要</a>
+                        <a class="nav-link mr-2" href="{% url 'index'%}#about">概要</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-1" href="#works">案件</a>
+                        <a class="nav-link mr-3" href="{% url 'index'%}#works">案件</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-1" href="#">案件｜新規投稿</a>
+                        <a class="nav-link mr-1" href="{% url 'work_new' %}">案件｜新規投稿</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-1" href="#info">建設情報</a>
+                        <a class="nav-link mr-3" href="{% url 'index'%}#info">建設情報</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mr-1" href="{% url 'post_new' %}">建設情報｜新規投稿</a>
