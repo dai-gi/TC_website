@@ -25,9 +25,11 @@ nav a h3 {
 nav .container {
     padding: 8px 0;
 }
+
 .dropdown-menu .dropdown-item {
     background-color: #ffffff;
 }
+
 .jumbotron {
     background-image: url("../img/main - image.png");
     background-size: cover;
@@ -115,7 +117,6 @@ footer {
     box-shadow: none;
 }
 
-
 /* post_detail */
 .post hr {
     border-top: 2px solid #c4c4c4;
@@ -125,9 +126,6 @@ footer {
 .post {
     padding-top: 100px;
 }
-
-/* post_form */
-
 
 @media (max-width: 992.98px) {
     .jumbotron {
