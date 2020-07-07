@@ -26,8 +26,12 @@ nav .container {
     padding: 8px 0;
 }
 
+.dropdown-menu {
+    background-color: rgba(9, 9, 61, 0.808);
+}
+
 .dropdown-menu .dropdown-item {
-    background-color: #ffffff;
+    background-color: rgba(9, 9, 61, 0);
 }
 
 .jumbotron {
