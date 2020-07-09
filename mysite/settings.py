@@ -23,7 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-fo52p@!-0kbvt88_&l2=1*r+euj-_u#7oa&2x#a0m72a-pfl5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -77,7 +76,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 
 # Database
@@ -128,13 +128,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+# ローカル用設定
+if DEBUG:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if not DEBUG:
+    STATIC_ROOT = '/usr/share/nginx/html/static'
+    MEDIA_ROOT = '/usr/share/nginx/html/media'
+
