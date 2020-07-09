@@ -6,10 +6,13 @@
     <div class="pb-3">
         <h1>建築情報投稿</h1>
     </div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="formpost py-3">
             {% render_field form.title class="form-control" placeholder="タイトルを入力" %}
+        </div>
+        <div class="formpost">
+            {{ form.image }}
         </div>
         <div class="formpost pb-5">
             {% render_field form.text class="form-control" placeholder="本文を入力" %}

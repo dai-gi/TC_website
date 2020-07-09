@@ -44,6 +44,8 @@ class CreatePostView(LoginRequiredMixin, View):
             post_data.title = form.cleaned_data['title']
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
+            if request.FILES:
+                post_data.image = request.FILES.get('image')    
             post_data.save()
             return redirect('post_detail', post_data.id)
 
@@ -60,6 +62,7 @@ class PostEditView(LoginRequiredMixin, View):
             initial={
                 'title': post_data.title,
                 'text': post_data.text,
+                'image': post_data.image,
             }
         )
 
@@ -75,6 +78,8 @@ class PostEditView(LoginRequiredMixin, View):
             post_data.title = form.cleaned_data['title']
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
+            if request.FILES:
+                post_data.image = request.FILES.get('image') 
             post_data.save()
             return redirect('post_detail', self.kwargs['pk'])
 

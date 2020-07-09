@@ -6,6 +6,10 @@
     <hr class="mt-1">
     <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
     <hr>
+    {% if post_data.image %}
+    <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="">
+    {% endif %}
+    <hr>
     <p class="py-5">{{ post_data.text|linebreaksbr }}</p>
     <hr class="pt-5 mb-0">
     {% if user.is_authenticated %}
