@@ -12,3 +12,6 @@ class LogoutView(views.LogoutView):
         if self.request.user.is_authenticated:
             self.logout()
         return redirect('/')
+
+class SignupView(views.SignupView):
+    template_name = 'accounts/signup.html'
