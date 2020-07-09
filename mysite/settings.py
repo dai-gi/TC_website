@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'app',
     'accounts',
     'django.contrib.sites',
-    'allauth', 
+    'allauth',
     'allauth.account',
     'allauth.socialaccount',
 ]
@@ -75,6 +75,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Database
