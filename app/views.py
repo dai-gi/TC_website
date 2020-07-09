@@ -132,6 +132,42 @@ class CreateWorkView(LoginRequiredMixin, View):
             'form': form
         })
 
+
+class WorkEditView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        work_data = Work.objects.get(id=self.kwargs['pk'])
+        form = WorkForm(
+            request.POST or None,
+            initial={
+                'title': work_data.title,
+                'text': work_data.text,
+            }
+        )
+
+        return render(request, 'app/work_form.html', {
+            'form': form
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = WorkForm(request.POST or None)
+
+        if form.is_valid():
+            work_data = Work.objects.get(id=self.kwargs['pk'])
+            work_data.title = form.cleaned_data['title']
+            work_data.address = form.cleaned_data['address']
+            work_data.text = form.cleaned_data['text']
+            work_data.staff = form.cleaned_data['staff']
+            work_data.tel = form.cleaned_data['tel']
+            work_data.price = form.cleaned_data['price']
+            work_data.published_date = timezone.now()
+            work_data.save()
+            return redirect('work_detail', self.kwargs['pk'])
+
+        return render(request, 'app/work_form.html', {
+            'form': form
+        })
+
+
 class SearchView(View):
     def get(self, request, *args, **kwargs):
         work_data = Work.objects.order_by('-id')
@@ -144,10 +180,23 @@ class SearchView(View):
                 if not word in exclusion_list:
                     query_list += word
             query = reduce(and_, [Q(title__icontains=q) | Q(
-                content__icontains=q) for q in query_list])
+                text__icontains=q) for q in query_list])
             work_data = work_data.filter(query)
 
         return render(request, 'app/work_list.html', {
             'keyword': keyword,
             'work_data': work_data
         })
+
+
+class WorkDeleteView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        work_data = Work.objects.get(id=self.kwargs['pk'])
+        return render(request, 'app/work_delete.html', {
+            'work_data': work_data
+        })
+
+    def post(self, request, *args, **kwargs):
+        work_data = Work.objects.get(id=self.kwargs['pk'])
+        work_data.delete()
+        return redirect('index')

@@ -10,4 +10,6 @@ urlpatterns = [
     path('post/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
     path('work/new/', views.CreateWorkView.as_view(), name='work_new'),
     path('work/<int:pk>/', views.WorkDetailView.as_view(), name='work_detail'),
+    path('work/<int:pk>/edit/', views.WorkEditView.as_view(), name='work_edit'),
+    path('work/<int:pk>/delete/', views.WorkDeleteView.as_view(), name='work_delete'),
 ]
