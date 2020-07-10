@@ -1,0 +1,17 @@
+{% extends "app/base.html" %}
+
+{% block blog %}
+<div class="container post">
+    <h1 class="pb-4">削除してもよろしいですか？</h1>
+    <h1 class="pb-3">{{ post_data.title }}</h1>
+    <hr class="mt-1">
+    <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
+    <hr>
+    <p class="py-5">{{ post_data.text|linebreaksbr }}</p>
+    <hr class="pt-5 mb-0">
+    <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger mb-5" type="submit">削除する</button>
+    </form>
+</div>
+{% endblock %}
