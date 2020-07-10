@@ -5,8 +5,8 @@
     <h1 class="pb-3">{{ post_data.title }}</h1>
     <hr class="mt-1">
     <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
-    <hr>
     {% if post_data.image %}
+    <hr>
     <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="">
     {% endif %}
     <hr>

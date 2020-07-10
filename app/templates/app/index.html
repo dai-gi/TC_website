@@ -80,6 +80,7 @@
 {% block blog %}
 <section class="page-section py-5 container" id="info">
     <div class="row text-center">
+        {% if post_data %}
         <div class="col-12 pb-5">
             <h1 class="section-heading">建設情報</h1>
             <hr>
@@ -88,7 +89,7 @@
         <div class="col-md-4 mb-4">
             <div class="card mb-4 shadow-sm h-100">
                 {% if post.image %}
-                    <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
+                <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
                 {% endif %}
                 <div class="card-body">
                     <h6 class="card-title">{{ post.title }}</h6>
@@ -105,6 +106,14 @@
             </div>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="col-12 pb-5">
+            <h1 class="section-heading">建設情報</h1>
+            <hr>
+        </div>
+        <h3 class="col-12">新しい投稿はありません。</h3>
+        {% endif %}
     </div>
 </section>
+
 {% endblock %}
