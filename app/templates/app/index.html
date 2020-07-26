@@ -85,27 +85,23 @@
             <h1 class="section-heading">建設情報</h1>
             <hr>
         </div>
-        {% for post in post_data %}
-        <div class="col-md-4 mb-4">
-            <div class="card mb-4 shadow-sm h-100">
-                {% if post.image %}
-                <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
-                {% endif %}
-                <div class="card-body">
-                    <h6 class="card-title">{{ post.title }}</h6>
-                    <div class="btn_content">
-                        <div class="d-flex justify-content-between align-items-center pt-3">
-                            <div class="btn-group">
-                                <a class="stretched-link btn btn-md text-light"
-                                    href="{% url 'post_detail' post.id %}">詳細</a>
-                            </div>
-                            <small class="text-muted">{{ post.published_date }}</small>
+        <div class="card mb-4 shadow-sm h-100">
+            {% if post.image %}
+            <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
+            {% endif %}
+            <div class="card-body">
+                <h6 class="card-title">{{ post.title }}<span class="small"> - {{ post.category }}</span></h6>
+                <div class="btn_content">
+                    <div class="d-flex justify-content-between align-items-center pt-3">
+                        <div class="btn-group">
+                            <a class="stretched-link btn btn-md text-light"
+                                href="{% url 'post_detail' post.id %}">詳細</a>
                         </div>
+                        <small class="text-muted">{{ post.published_date }}</small>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
         {% else %}
         <div class="col-12 pb-5">
             <h1 class="section-heading">建設情報</h1>
