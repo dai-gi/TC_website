@@ -4,11 +4,11 @@ from django.utils import timezone
 from django.urls import reverse
 
 
-class Category(models.Model):
-    name = models.CharField("カテゴリ", max_length=50)
+# class Category(models.Model):
+#     name = models.CharField("カテゴリ", max_length=50)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Post(models.Model):
