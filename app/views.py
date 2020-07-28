@@ -101,6 +101,14 @@ class PostDeleteView(LoginRequiredMixin, View):
         return redirect('index')
 
 
+class WorkListView(View):
+    def get(self, request, *args, **kwargs):
+        post_data = Post.objects.order_by("-id")
+        return render(request, 'app/work_list.html', {
+            'post_data': post_data,
+        })
+
+
 class WorkDetailView(View):
     def get(self, request, *args, **kwargs):
         work_data = Work.objects.get(id=self.kwargs['pk'])
