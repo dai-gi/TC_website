@@ -103,9 +103,9 @@ class PostDeleteView(LoginRequiredMixin, View):
 
 class WorkListView(View):
     def get(self, request, *args, **kwargs):
-        post_data = Post.objects.order_by("-id")
+        work_data = Work.objects.order_by("-id")
         return render(request, 'app/work_list.html', {
-            'post_data': post_data,
+            'work_data': work_data
         })
 
 
