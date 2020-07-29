@@ -15,7 +15,8 @@
     <hr class="pt-5 mb-0">
     <div class="d-flex mb-5">
         <a class="btn btn-warning mr-3" href="{% url 'work_edit' work_data.id %}">編集する</a>
-        <a class="btn btn-danger" href="{% url 'work_delete' work_data.id %}">削除する</a>
+        <a class="btn btn-danger mr-3" href="{% url 'work_delete' work_data.id %}">削除する</a>
+        <a class="btn btn-primary" href="{% url 'work_list' %}">戻る</a>
     </div>
     {% endif %}
 </div>
