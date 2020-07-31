@@ -29,6 +29,7 @@ class Post(models.Model):
 
 class Work(models.Model):
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	# category = models.ForeignKey(Category, verbose_name='カテゴリ', on_delete=models.PROTECT) 
 	title = models.CharField('タイトル', max_length=200)
 	address = models.CharField('現場住所', max_length=200)
 	text = models.TextField('作業内容', blank=True, null=True)
