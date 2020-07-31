@@ -48,6 +48,7 @@
                 <h1 class="section-heading">仕事</h1>
                 <hr>
             </div>
+            {% if work_data %}
             <table class="table table-hover">
                 <thead>
                     <tr class="table-heading">
@@ -72,6 +73,9 @@
                 </tbody>
                 {% endfor %}
             </table>
+            {% else %}
+            <h3 class="col-12">新しい投稿はありません</h3>
+            {% endif %}
         </div>
     </div>
 </section>
@@ -107,7 +111,7 @@
             <h1 class="section-heading">建設情報</h1>
             <hr>
         </div>
-        <h3 class="col-12">新しい投稿はありません。</h3>
+        <h3 class="col-12">新しい投稿はありません</h3>
         {% endif %}
     </div>
 </section>
