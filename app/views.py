@@ -45,7 +45,7 @@ class CreatePostView(LoginRequiredMixin, View):
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
             if request.FILES:
-                post_data.image = request.FILES.get('image')    
+                post_data.image = request.FILES.get('image')
             post_data.save()
             return redirect('post_detail', post_data.id)
 
@@ -79,7 +79,7 @@ class PostEditView(LoginRequiredMixin, View):
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
             if request.FILES:
-                post_data.image = request.FILES.get('image') 
+                post_data.image = request.FILES.get('image')
             post_data.save()
             return redirect('post_detail', self.kwargs['pk'])
 
@@ -115,7 +115,7 @@ class WorkDetailView(View):
         return render(request, 'app/work_detail.html', {
             'work_data': work_data
         })
-        
+
 
 class CreateWorkView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
@@ -132,7 +132,7 @@ class CreateWorkView(LoginRequiredMixin, View):
             work_data = Work()
             work_data.author = request.user
             work_data.title = form.cleaned_data['title']
-            category = form.cleande_data['category']
+            category = form.cleaned_data['category']
             category_data = Category.objects.get(name=category)
             work_data.category = category_data
             work_data.address = form.cleaned_data['address']
@@ -191,7 +191,7 @@ class WorkEditView(LoginRequiredMixin, View):
 class CategoryView(View):
     def get(self, request, *args, **kwargs):
         category_data = Category.objects.get(name=self.kwargs['category'])
-        work_data = Post.objects.order_by('-id').filter(category=category_data)
+        work_data = Work.objects.order_by('-id').filter(category=category_data)
         return render(request, 'app/index.html', {
             'work_data': work_data
         })
