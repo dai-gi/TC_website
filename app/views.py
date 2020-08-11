@@ -1,5 +1,5 @@
 from .forms import PostForm, WorkForm
-from app.models import Post, Work, Category
+from .models import Post, Work, Category
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -229,3 +229,4 @@ class WorkDeleteView(LoginRequiredMixin, View):
         work_data = Work.objects.get(id=self.kwargs['pk'])
         work_data.delete()
         return redirect('index')
+
