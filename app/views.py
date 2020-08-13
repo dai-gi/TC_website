@@ -192,7 +192,7 @@ class CategoryView(View):
     def get(self, request, *args, **kwargs):
         category_data = Category.objects.get(name=self.kwargs['category'])
         work_data = Work.objects.order_by('-id').filter(category=category_data)
-        return render(request, 'app/index.html', {
+        return render(request, 'app/work_list.html', {
             'work_data': work_data
         })
 
