@@ -19,6 +19,14 @@ class IndexView(View):
         })
 
 
+class PostListView(View):
+    def get(self, request, *args, **kwargs):
+        post_data = Post.objects.order_by("-id")
+        return render(request, 'app/post_list.html', {
+            'post_data': post_data
+        })
+
+
 class PostDetailView(View):
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.get(id=self.kwargs['pk'])
@@ -41,6 +49,9 @@ class CreatePostView(LoginRequiredMixin, View):
         if form.is_valid():
             post_data = Post()
             post_data.author = request.user
+            category = form.cleaned_data['category']
+            category_data = Category.objects.get(name=category)
+            post_data.category = category_data
             post_data.title = form.cleaned_data['title']
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
@@ -61,6 +72,7 @@ class PostEditView(LoginRequiredMixin, View):
             request.POST or None,
             initial={
                 'title': post_data.title,
+                'category': post_data.category,
                 'text': post_data.text,
                 'image': post_data.image,
             }
@@ -75,6 +87,9 @@ class PostEditView(LoginRequiredMixin, View):
 
         if form.is_valid():
             post_data = Post.objects.get(id=self.kwargs['pk'])
+            category = form.cleaned_data['category']
+            category_data = Category.objects.get(name=category)
+            post_data.category = category_data
             post_data.title = form.cleaned_data['title']
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
@@ -191,6 +206,10 @@ class WorkEditView(LoginRequiredMixin, View):
 class CategoryView(View):
     def get(self, request, *args, **kwargs):
         category_data = Category.objects.get(name=self.kwargs['category'])
+        post_data = Post.objects.order_by('-id').filter(category=category_data)
+        return render(request, 'app/post_list.html', {
+            'post_data': post_data
+        })
         work_data = Work.objects.order_by('-id').filter(category=category_data)
         return render(request, 'app/work_list.html', {
             'work_data': work_data
