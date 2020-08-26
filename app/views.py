@@ -1,5 +1,5 @@
 from .forms import PostForm, WorkForm
-from .models import Post, Work, Category
+from .models import Post, Work, PostCategory, WorkCategory
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -49,9 +49,6 @@ class CreatePostView(LoginRequiredMixin, View):
         if form.is_valid():
             post_data = Post()
             post_data.author = request.user
-            category = form.cleaned_data['category']
-            category_data = Category.objects.get(name=category)
-            post_data.category = category_data
             post_data.title = form.cleaned_data['title']
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
@@ -72,7 +69,6 @@ class PostEditView(LoginRequiredMixin, View):
             request.POST or None,
             initial={
                 'title': post_data.title,
-                'category': post_data.category,
                 'text': post_data.text,
                 'image': post_data.image,
             }
@@ -87,9 +83,6 @@ class PostEditView(LoginRequiredMixin, View):
 
         if form.is_valid():
             post_data = Post.objects.get(id=self.kwargs['pk'])
-            category = form.cleaned_data['category']
-            category_data = Category.objects.get(name=category)
-            post_data.category = category_data
             post_data.title = form.cleaned_data['title']
             post_data.text = form.cleaned_data['text']
             post_data.published_date = timezone.now()
@@ -147,9 +140,6 @@ class CreateWorkView(LoginRequiredMixin, View):
             work_data = Work()
             work_data.author = request.user
             work_data.title = form.cleaned_data['title']
-            category = form.cleaned_data['category']
-            category_data = Category.objects.get(name=category)
-            work_data.category = category_data
             work_data.address = form.cleaned_data['address']
             work_data.text = form.cleaned_data['text']
             work_data.staff = form.cleaned_data['staff']
@@ -171,7 +161,6 @@ class WorkEditView(LoginRequiredMixin, View):
             request.POST or None,
             initial={
                 'title': work_data.title,
-                'category': work_data.category,
                 'text': work_data.text,
             }
         )
@@ -186,9 +175,6 @@ class WorkEditView(LoginRequiredMixin, View):
         if form.is_valid():
             work_data = Work.objects.get(id=self.kwargs['pk'])
             work_data.title = form.cleaned_data['title']
-            category = form.cleaned_data['category']
-            category_data = Category.objects.get(name=category)
-            work_data.category = category_data
             work_data.address = form.cleaned_data['address']
             work_data.text = form.cleaned_data['text']
             work_data.staff = form.cleaned_data['staff']
@@ -200,19 +186,6 @@ class WorkEditView(LoginRequiredMixin, View):
 
         return render(request, 'app/work_form.html', {
             'form': form
-        })
-
-
-class CategoryView(View):
-    def get(self, request, *args, **kwargs):
-        category_data = Category.objects.get(name=self.kwargs['category'])
-        post_data = Post.objects.order_by('-id').filter(category=category_data)
-        return render(request, 'app/post_list.html', {
-            'post_data': post_data
-        })
-        work_data = Work.objects.order_by('-id').filter(category=category_data)
-        return render(request, 'app/work_list.html', {
-            'work_data': work_data
         })
 
 
@@ -248,4 +221,3 @@ class WorkDeleteView(LoginRequiredMixin, View):
         work_data = Work.objects.get(id=self.kwargs['pk'])
         work_data.delete()
         return redirect('index')
-
