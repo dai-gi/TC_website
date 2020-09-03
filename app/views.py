@@ -1,5 +1,5 @@
 from .forms import PostForm, WorkForm
-from .models import Post, Work, PostCategory, WorkCategory
+from .models import Post, Work
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
