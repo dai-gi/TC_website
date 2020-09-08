@@ -102,8 +102,7 @@ class PostEditView(LoginRequiredMixin, View):
             'form': form
         })
 
-
-        class CategoryView(View):
+class CategoryView(View):
     def get(self, request, *args, **kwargs):
         category_data = Category.objects.get(name=self.kwargs['category'])
         post_data = Post.objects.order_by('-id').filter(category=category_data)
