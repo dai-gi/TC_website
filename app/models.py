@@ -9,6 +9,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class WorkCategory(models.Model):
+	name = models.CharField("案件カテゴリ", max_length=50)
+
+	def __str__(self):
+		return self.name
 
 class Post(models.Model):
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -28,6 +33,7 @@ class Post(models.Model):
 
 class Work(models.Model):
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	work_category = models.ForeignKey(WorkCategory, verbose_name='案件カテゴリ', on_delete=models.PROTECT)
 	title = models.CharField('タイトル', max_length=200)
 	address = models.CharField('現場住所', max_length=200)
 	text = models.TextField('作業内容', blank=True, null=True)
