@@ -1,5 +1,5 @@
 from django import forms
-from .models import Category
+from .models import Category, WorkCategory
 
 
 class PostForm(forms.Form):
@@ -15,7 +15,13 @@ class PostForm(forms.Form):
 
 
 class WorkForm(forms.Form):
+    work_category_data = WorkCategory.objects.all()
+    work_category_choice = {}
+    for work_category in work_category_data
+        work_category_choice[work_category] = work_category
+
     title = forms.CharField(max_length=30, label='タイトル')
+    work_category = forms.ChoiceField(label='案件カテゴリ', widget=forms.Select, choices=list(work_category_choice.items()))
     address = forms.CharField(label='内容', max_length=30)
     text = forms.CharField(label='内容', widget=forms.Textarea())
     staff = forms.CharField(label='内容', max_length=30)
