@@ -1,5 +1,5 @@
 from .forms import PostForm, WorkForm
-from .models import Post, Work
+from .models import Post, Work, Category, WorkCategory
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -106,7 +106,7 @@ class CategoryView(View):
     def get(self, request, *args, **kwargs):
         category_data = Category.objects.get(name=self.kwargs['category'])
         post_data = Post.objects.order_by('-id').filter(category=category_data)
-        return render(request, 'app/index.html', {
+        return render(request, 'app/post_list.html', {
             'post_data': post_data
         })
 
@@ -155,6 +155,9 @@ class CreateWorkView(LoginRequiredMixin, View):
             work_data = Work()
             work_data.author = request.user
             work_data.title = form.cleaned_data['title']
+            work_category = form.cleaned_data['work_category']
+            work_category_data = Category.objects.get(name=work_category)
+            work_data.work_category = work_category_data
             work_data.address = form.cleaned_data['address']
             work_data.text = form.cleaned_data['text']
             work_data.staff = form.cleaned_data['staff']
@@ -176,6 +179,7 @@ class WorkEditView(LoginRequiredMixin, View):
             request.POST or None,
             initial={
                 'title': work_data.title,
+                'work_category': work_data.work_category
                 'text': work_data.text,
             }
         )
@@ -190,6 +194,9 @@ class WorkEditView(LoginRequiredMixin, View):
         if form.is_valid():
             work_data = Work.objects.get(id=self.kwargs['pk'])
             work_data.title = form.cleaned_data['title']
+            work_category = form.cleaned_data['work_category']
+            work_category_data = Category.objects.get(name=category)
+            work_data.work_category = work_category_data
             work_data.address = form.cleaned_data['address']
             work_data.text = form.cleaned_data['text']
             work_data.staff = form.cleaned_data['staff']
@@ -203,6 +210,14 @@ class WorkEditView(LoginRequiredMixin, View):
             'form': form
         })
 
+
+class WorkCategoryView(View):
+    def get(self, request, *args, **kwargs):
+        work_category_data = WorkCategory.objects.get(name=self.kwargs['category'])
+        work_data = Work.objects.order_by('-id').filter(work_category=work_category_data)
+        return render(request, 'app/work_list.html', {
+            'work_data': work_data
+        })
 
 class SearchView(View):
     def get(self, request, *args, **kwargs):
