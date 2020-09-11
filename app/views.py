@@ -156,7 +156,7 @@ class CreateWorkView(LoginRequiredMixin, View):
             work_data.author = request.user
             work_data.title = form.cleaned_data['title']
             work_category = form.cleaned_data['work_category']
-            work_category_data = Category.objects.get(name=work_category)
+            work_category_data = WorkCategory.objects.get(name=work_category)
             work_data.work_category = work_category_data
             work_data.address = form.cleaned_data['address']
             work_data.text = form.cleaned_data['text']
@@ -195,7 +195,7 @@ class WorkEditView(LoginRequiredMixin, View):
             work_data = Work.objects.get(id=self.kwargs['pk'])
             work_data.title = form.cleaned_data['title']
             work_category = form.cleaned_data['work_category']
-            work_category_data = Category.objects.get(name=category)
+            work_category_data = WorkCategory.objects.get(name=category)
             work_data.work_category = work_category_data
             work_data.address = form.cleaned_data['address']
             work_data.text = form.cleaned_data['text']
