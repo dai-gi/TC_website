@@ -13,3 +13,4 @@ def work_common(request):
     context = {
         'work_category_data': work_category_data,
     }
+    return context

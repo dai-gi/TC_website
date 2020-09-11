@@ -213,7 +213,7 @@ class WorkEditView(LoginRequiredMixin, View):
 
 class WorkCategoryView(View):
     def get(self, request, *args, **kwargs):
-        work_category_data = WorkCategory.objects.get(name=self.kwargs['category'])
+        work_category_data = WorkCategory.objects.get(name=self.kwargs['work_category'])
         work_data = Work.objects.order_by('-id').filter(work_category=work_category_data)
         return render(request, 'app/work_list.html', {
             'work_data': work_data
