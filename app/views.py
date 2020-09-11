@@ -179,7 +179,7 @@ class WorkEditView(LoginRequiredMixin, View):
             request.POST or None,
             initial={
                 'title': work_data.title,
-                'work_category': work_data.work_category
+                'work_category': work_data.work_category,
                 'text': work_data.text,
             }
         )

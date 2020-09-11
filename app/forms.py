@@ -17,7 +17,7 @@ class PostForm(forms.Form):
 class WorkForm(forms.Form):
     work_category_data = WorkCategory.objects.all()
     work_category_choice = {}
-    for work_category in work_category_data
+    for work_category in work_category_data:
         work_category_choice[work_category] = work_category
 
     title = forms.CharField(max_length=30, label='タイトル')
