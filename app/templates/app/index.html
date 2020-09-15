@@ -14,7 +14,7 @@
     <div class="container">
         <div class="text-center col-12 pb-5">
             <h1 class="section-heading">概要</h1>
-            <hr>
+            <hr class="w-25">
         </div>
         <div class="row text-center">
             <div class="col-md-4">
@@ -46,7 +46,7 @@
         <div class="row text-center matter-list">
             <div class="col-12 pb-5">
                 <h1 class="section-heading">仕事</h1>
-                <hr>
+                <hr class="w-25">
             </div>
             {% if work_data %}
             <table class="table table-hover">
@@ -81,36 +81,37 @@
 </section>
 {% endblock %}
 
-{% block blog %}
-<section class="page-section py-5 container" id="info">
-    <div class="row text-center">
+{% block post %}
+<section class="container" id="info">
+    <div class="text-center my-5">
+        <h1>建設情報</h1>
+        <hr class="w-25">
+    </div>
+    <div class="row mb-5">
         {% if post_data %}
-        <div class="col-12 pb-5">
-            <h1 class="section-heading">建設情報</h1>
-            <hr>
-        </div>
-        <div class="card mb-4 shadow-sm h-100">
+        {% for post in post_data %}
+        <div class="card col-3 my-3">
             {% if post.image %}
             <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
             {% endif %}
             <div class="card-body">
-                <h6 class="card-title">{{ post.title }}<span class="small"> - {{ post.category }}</span></h6>
-                <div class="btn_content">
-                    <div class="d-flex justify-content-between align-items-center pt-3">
-                        <div class="btn-group">
-                            <a class="stretched-link btn btn-md text-light"
-                                href="{% url 'post_detail' post.id %}">詳細</a>
+                <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
+                <p>{{ post.category }}</p>
+                <div class="align-bottom">
+                    <div class="btn_content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="stretched-link btn btn-md text-light"
+                                    href="{% url 'post_detail' post.id %}">詳細</a>
+                            </div>
+                            <small class="text-muted">{{ post.published_date }}</small>
                         </div>
-                        <small class="text-muted">{{ post.published_date }}</small>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
         {% else %}
-        <div class="col-12 pb-5">
-            <h1 class="section-heading">建設情報</h1>
-            <hr>
-        </div>
         <h3 class="col-12">新しい投稿はありません</h3>
         {% endif %}
     </div>
