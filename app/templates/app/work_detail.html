@@ -2,7 +2,14 @@
 
 {% block work %}
 <div class="container post">
+
+    <form method="get" action="{% url 'search' %}" class="form-inline my-2 my-md-0">
+        <input type="text" class="form-control" name="keyword" placeholder="案件検索...">
+        <button class="btn btn-outline-light my-2 my-sm-0 ml-3" type="submit">検索</button>
+    </form>
+
     <h1 class="pb-3">{{ work_data.title }}</h1>
+    <p>{{ work_data.work_category }}</p>
     <hr class="mt-1">
     <p class="py-3">{{ work_data.published_date }} by {{ work_data.author }}</p>
     <hr>

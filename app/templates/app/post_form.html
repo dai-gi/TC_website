@@ -1,7 +1,7 @@
 {% extends "app/base.html" %}
 {% load widget_tweaks %}
 
-{% block blog %}
+{% block post %}
 <div class="container post">
     <div class="pb-3">
         <h1>建築情報投稿</h1>
@@ -10,6 +10,9 @@
         {% csrf_token %}
         <div class="formpost py-3">
             {% render_field form.title class="form-control" placeholder="タイトルを入力" %}
+        </div>
+        <div class="formpost">
+            {% render_field form.category class="form-control" placeholder="カテゴリを選択" %}
         </div>
         <div class="formpost">
             {{ form.image }}
