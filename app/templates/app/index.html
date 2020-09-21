@@ -1,30 +1,53 @@
 {% extends 'app/base.html' %}
 
-{% block post %}
-<section class="container" id="info">
-    <div class="text-center my-5">
-        <h1>BLOG</h1>
-        <hr class="w-25">
-    </div>
-    <div class="row mb-5">
-        {% if post_data %}
-        {% for post in post_data %}
-        <div class="card col-3 my-3">
-            {% if post.image %}
-            <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
-            {% endif %}
-            <div class="card-body">
-                <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
-                <p>{{ post.category }}</p>
-                <a class="btn btn-outline-secondary" href="{% url 'post_detail' post.id %}">詳細</a>
-                <small class="text-muted">{{ post.published_date }}</small>
-            </div>
+{% block company %}
+<section class="py-5" id="company">
+    <div class="container">
+        <div class="text-center col-12 pb-5">
+            <h1 class="section-heading">会社情報</h1>
+            <hr class="w-25">
         </div>
-        {% endfor %}
-        {% else %}
-        <h3 class="col-12">新しい投稿はありません</h3>
-        {% endif %}
     </div>
 </section>
+{% endblock %}
 
+{% block business %}
+<section class="py-5 bg-light" id="business">
+    <div class="container">
+        <div class="text-center col-12 pb-5">
+            <h1 class="section-heading">業務内容</h1>
+            <hr class="w-25">
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block post %}
+<section class="" id="info">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1>BLOG</h1>
+            <hr class="w-25">
+        </div>
+        <div class="row mb-5">
+            {% if post_data %}
+            {% for post in post_data %}
+            <div class="card col-3 my-3">
+                {% if post.image %}
+                <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
+                {% endif %}
+                <div class="card-body">
+                    <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
+                    <p>{{ post.category }}</p>
+                    <a class="btn btn-outline-secondary" href="{% url 'post_detail' post.id %}">詳細</a>
+                    <small class="text-muted">{{ post.published_date }}</small>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h3 class="col-12">新しい投稿はありません</h3>
+            {% endif %}
+        </div>
+    </div>
+</section>
 {% endblock %}

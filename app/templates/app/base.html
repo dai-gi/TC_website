@@ -63,33 +63,58 @@
         <!-- Top_Image -->
         <img src="https://picsum.photos/1450/650" class="img-fluid">
         <!-- Company -->
-        <div class="page-section py-5" id="company">
-            <div class="container">
-                <div class="text-center col-12 pb-5">
-                    <h1 class="section-heading">会社情報</h1>
-                    <hr class="w-25">
-                </div>
-            </div>
-        </div>
+        {% block company %}
+        {% endblock %}
+        
         <!-- Business -->
-        <div class="page-section py-5" id="business">
-            <div class="container">
-                <div class="text-center col-12 pb-5">
-                    <h1 class="section-heading">業務内容</h1>
-                    <hr class="w-25">
-                </div>
-            </div>
-        </div>
+        {% block business %}
+        {% endblock %}
 
         <!-- Blog -->
         {% block post %}
         {% endblock %}
+
+        <!-- Contact -->
+        <section class="py-5 bg-light" id="business">
+            <div class="container">
+                <div class="text-center col-12 pb-5">
+                    <h1 class="section-heading">お問い合わせ</h1>
+                    <hr class="w-25">
+                </div>
+            </div>
+        </section>
+
     </main>
     <!-- Footer -->
-    <footer class="footer pt-3 pb-1">
+    <footer class="footer pt-3 pb-1 bg-secondary">
         <div class="container">
-            <div class="text-center">
-                <p>&copy; Copylight2020 TC｜Technology Confidence. All Rights Reserved.</p>
+            <div class="row text-center">
+                <div class="col-6 text-light">
+                    <h1>TC</h1>
+                </div>
+                <div class="col-6">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="text-light" href="/">会社情報</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="/">業務内容</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="/">BLOG</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="/">お問い合わせ</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="/">メンバー専用</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center text-light">
+                <p>&copy;2018 TC </p>
             </div>
         </div>
     </footer>
