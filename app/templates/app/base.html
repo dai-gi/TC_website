@@ -16,54 +16,8 @@
 <body>
     <!-- Navigation -->
     <header role="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-            <div class="container">
-                <a class="navbar-brand" href="/">TC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index'%}#company">会社情報</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index'%}#business">業務内容</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'post_list'%}">BLOG</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">お問い合わせ</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">新規投稿</a>
-                            <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
-                                <a class="dropdown-item text-light" href="{% url 'work_new' %}">案件</a>
-                                <a class="dropdown-item text-light" href="{% url 'post_new' %}">建設情報</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'work_list' %}">案件情報</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">ログイン</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">サインアップ</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        {% block navigation %}
+        {% endblock %}
     </header>
     <main>
         <!-- Top_Image -->
@@ -76,27 +30,27 @@
         {% block business %}
         {% endblock %}
 
+        <!-- Work -->
+        {% block work %}
+        {% endblock %}
+
         <!-- Blog -->
         {% block post %}
         {% endblock %}
 
         <!-- Contact -->
-        <section class="py-5 bg-light" id="business">
-            <div class="container">
-                <div class="text-center col-12 pb-5">
-                    <h1 class="section-heading">お問い合わせ</h1>
-                    <hr class="w-25">
-                </div>
-            </div>
-        </section>
+        {% block contact %}
+        {% endblock %}
 
     </main>
     <!-- Footer -->
-    <footer class="footer pt-3 pb-1 bg-secondary">
+    <footer class="footer pt-5 pb-1 bg-secondary">
         <div class="container">
             <div class="row text-center">
                 <div class="col-6 text-light">
-                    <h1>TC</h1>
+                    <h1>
+                        <a class="text-light" href="{% url 'index'%}">TC</a>
+                    </h1>
                 </div>
                 <div class="col-6">
                     <ul class="list-unstyled">
@@ -104,7 +58,7 @@
                             <a class="text-light" href="{% url 'index'%}#campany">会社情報</a>
                         </li>
                         <li>
-                            <a class="text-light" href="/">業務内容</a>
+                            <a class="text-light" href="{% url 'index'%}#business">業務内容</a>
                         </li>
                         <li>
                             <a class="text-light" href="{% url 'post_list'%}">BLOG</a>
@@ -113,7 +67,7 @@
                             <a class="text-light" href="/">お問い合わせ</a>
                         </li>
                         <li>
-                            <a class="text-light" href="/">メンバー専用</a>
+                            <a class="text-light" href="{% url 'member'%}">メンバー専用</a>
                         </li>
                     </ul>
                 </div>
