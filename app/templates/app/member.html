@@ -45,7 +45,16 @@
 </nav>
 {% endblock %}
 
-
+{% block work %}
+<section class="py-5 bg-light" id="work">
+    <div class="container">
+        <div class="text-center col-12 pb-5">
+            <h1 class="section-heading">案件情報</h1>
+            <hr class="w-25">
+        </div>
+    </div>
+</section>
+{% endblock %}
 
 {% block post %}
 <section class="" id="info">
@@ -57,7 +66,7 @@
         <div class="row mb-5">
             {% if post_data %}
             {% for post in post_data %}
-            <div class="card col-3 my-3">
+            <div class="card col-md-3 col-xs-12 my-3">
                 {% if post.image %}
                 <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
                 {% endif %}
