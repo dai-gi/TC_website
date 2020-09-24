@@ -3,6 +3,7 @@ from app import views
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
+    path('member/', views.MemberView.as_view(), name='member'),
     path('search/', views.SearchView.as_view(), name='search'), 
     path('post/list', views.PostListView.as_view(), name='post_list'),
     path('post/new/', views.CreatePostView.as_view(), name='post_new'),
