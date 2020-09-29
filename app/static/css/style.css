@@ -1,10 +1,10 @@
 /* TOP_IMAGE */
-/* .jumbotron {
-    background-image: url("../img/main - image.png");
+.jumbotron {
+    background-image: url("...");
     background-size: cover;
-    background-position: center 90%;
-    height: 800px;
-} */
+    background-position: center 60%;
+    height: 600px;
+}
 
 /* .display-1 {
     padding-top: 230px;
@@ -17,12 +17,22 @@
     font-family: 'arial black'
 } */
 
+/* NAVI */
+.navbar_main {
+    background-color: #023e8a;
+    color: #80A0C0;
+}
+
+.nav_title{
+    color: #80A0C0;
+}
 
 /* ABOUT */
-/* i {
-    color: #034078;
-} */
 
+/* NAVIGATION */
+button span .navbar-toggler-icon {
+    background-color: #ffffff;
+}
 
 /* WORK */
 thead {
