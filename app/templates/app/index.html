@@ -1,26 +1,26 @@
 {% extends 'app/base.html' %}
 
 {% block navigation %}
-<nav class="navbar navbar-expand-lg navbar-light bg-primary" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark navbar_main" role="navigation">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'index'%}">TC</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+        <a class="navbar-brand display-1 ml-4" href="{% url 'index'%}">TC</a>
+        <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbar"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse nav justify-content-end ml-3" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'index'%}#company">会社情報</a>
+                    <a class="nav-link" href="{% url 'index'%}#company">会社情報</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'index'%}#business">業務内容</a>
+                <li class="nav-item ml-5">
+                    <a class="nav-link" href="{% url 'index'%}#business">業務内容</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post_list'%}">BLOG</a>
+                <li class="nav-item ml-5">
+                    <a class="nav-link" href="{% url 'post_list'%}">BLOG</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="/">お問い合わせ</a>
+                <li class="nav-item ml-5">
+                    <a class="nav-link" href="/">お問い合わせ</a>
                 </li>
             </ul>
         </div>
@@ -34,6 +34,15 @@
         <div class="text-center col-12 pb-5">
             <h1 class="section-heading">会社情報</h1>
             <hr class="w-25">
+            <div class="row">
+                <div class="col-6">
+                    <img src="https://placehold.jp/300x300.png" alt="..." class="img-thumbnail" loading="lazy">
+                </div>
+                <div class="col-6">
+                    <h3 class="">タイトル</h3>
+                    <P>そこも今日はなはだこの授業方というのの限りをするんで。もちろん今日で試験年もそんなにこの説明たあっともへ解らていなをは養成さですたて、まだにはあるないませました。</P>
+                </div>
+            </div>
         </div>
     </div>
 </section>
