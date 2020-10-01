@@ -1,6 +1,7 @@
 /* TOP_IMAGE */
 .jumbotron {
     background-image: url("...");
+    background-color: #c0c0c0;
     background-size: cover;
     background-position: center 60%;
     height: 600px;
