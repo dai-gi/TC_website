@@ -75,10 +75,10 @@
             <h1>BLOG</h1>
             <hr class="w-25">
         </div>
-        <div class="row mb-5">
+        <div class="row mb-5 justify-content-center">
             {% if post_data %}
             {% for post in post_data %}
-            <div class="card col-3 my-3">
+            <div class="card col-md-3 my-3 mx-md-3">
                 {% if post.image %}
                 <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
                 {% endif %}
