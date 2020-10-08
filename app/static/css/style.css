@@ -46,6 +46,9 @@ tbody tr {
 }
 
 /* FOOTER */
+.col-6 a {
+    text-decoration: none;
+}
 
 /* POST */
 .card-title {
