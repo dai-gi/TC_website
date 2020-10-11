@@ -1,3 +1,8 @@
+/* FONT-FAMILY */
+body {
+    font-family: 'MS Pゴシック';
+}
+
 /* TOP_IMAGE */
 .jumbotron {
     background-image: url("...");
@@ -7,16 +12,6 @@
     height: 600px;
 }
 
-/* .display-1 {
-    padding-top: 230px;
-    color: #ffffff;
-    font-family: 'arial black'
-}
-
-.display-4 {
-    color: #ffffff;
-    font-family: 'arial black'
-} */
 
 /* NAVI */
 .navbar_main {
