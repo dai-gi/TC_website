@@ -1,6 +1,18 @@
-/* FONT-FAMILY */
+/* ALL_STYLE */
 body {
     font-family: 'MS Pゴシック';
+}
+
+/* NAVI */
+.navbar_main {
+    background-color: #023e8a;
+    color: #80A0C0;
+}
+.nav_title{
+    color: #80A0C0;
+}
+button span .navbar-toggler-icon {
+    background-color: #ffffff;
 }
 
 /* TOP_IMAGE */
@@ -12,37 +24,13 @@ body {
     height: 600px;
 }
 
-
-/* NAVI */
-.navbar_main {
-    background-color: #023e8a;
-    color: #80A0C0;
-}
-
-.nav_title{
-    color: #80A0C0;
-}
-
-/* ABOUT */
-
-/* NAVIGATION */
-button span .navbar-toggler-icon {
-    background-color: #ffffff;
-}
-
 /* WORK */
 thead {
     color: #fefcfb;
     background-color: #034078;
 }
-
 tbody tr {
     background-color: none;
-}
-
-/* FOOTER */
-.col-6 a {
-    text-decoration: none;
 }
 
 /* POST */
@@ -53,6 +41,9 @@ tbody tr {
 .index-img {
     object-fit: cover;
     height: 240px;
+}
+.card-body .btn {
+    background-color: #023e8a;
 }
 
 /* POST_DETAIL */
@@ -69,6 +60,17 @@ tbody tr {
 
 .post {
     padding-top: 100px;
+}
+
+
+/* CONTACT */
+.border .btn {
+    background-color: #023e8a;
+}
+
+/* FOOTER */
+.col-8 a {
+    text-decoration: none;
 }
 
 
