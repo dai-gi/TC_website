@@ -51,44 +51,43 @@
     <footer class="footer pt-5 pb-1 bg-secondary">
         <div class="container">
             <div class="row text-left">
-                <div class="col-8 bg-primary">
-                    <div class="col-12text-light bg-secondary">
-                        <h1>
-                            <a class="text-light" href="{% url 'index'%}">TC</a>
-                        </h1>
-                    </div>
-                    <div class="col-9 bg-warning">
-                        <ul class="list-unstyled">
-                            <li class="col-5">
-                                <a class="text-light" href="{% url 'index'%}#company">会社情報</a>
-                            </li>
-                            <li class="col-5">
-                                <a class="text-light" href="{% url 'index'%}#business">業務内容</a>
-                            </li>
-                            <li class="col-5">
-                                <a class="text-light" href="{% url 'post_list'%}">BLOG</a>
-                            </li>
-                            <li class="col-5">
-                                <a class="text-light" href="/">お問い合わせ</a>
-                            </li>
-                            <li class="col-5">
-                                {% if user.is_authenticated %}
-                                <a class="text-light" href="{% url 'account_logout' %}">メンバー専用</a>
-                                {% else %}
-                                <a class="text-light" href="{% url 'account_login' %}">メンバー専用</a>
-                                {% endif %}
-                            </li>
-                        </ul>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12 text-light mb-3">
+                            <a class="text-light h1" href="{% url 'index'%}">TC</a>
+                        </div>
+                        <div class="col-auto h5">
+                            <a class="text-light" href="{% url 'index'%}#company">会社概要</a>
+                        </div>
+                        <div class="col-auto h5">
+                            <a class="text-light" href="{% url 'index'%}#business">業務内容</a>
+                        </div>
+                        <div class="col-auto h5">
+                            <a class="text-light" href="{% url 'post_list'%}">BLOG</a>
+                        </div>
+                        <div class="col-auto h5">
+                            <a class="text-light" href="/">CONTACT</a>
+                        </div>
+                        <div class="col-auto h5">
+                            {% if user.is_authenticated %}
+                            <a class="text-light" href="{% url 'account_logout' %}">MEMBER</a>
+                            {% else %}
+                            <a class="text-light" href="{% url 'account_login' %}">MEMBER</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-                <div class="col-4 text-right text-light bg-success">
+                <div class="col-4 text-right text-light">
                     <p>〒123-4567</p>
                     <p>東京都千代田区9-99-99</p>
                     <p>TCビル</p>
                 </div>
-            </div>
-            <div class="text-center text-light">
-                <p>&copy;2018 TC </p>
+                <div class="col-6 text-light text-left mt-3">
+                    <p>&copy; 2018 TC </p>
+                </div>
+                <div class="col-6 text-light text-right mt-3">
+                    <p>ALL RIGHTS REXERVED.</p>
+                </div>
             </div>
         </div>
     </footer>
