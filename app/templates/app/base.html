@@ -48,7 +48,11 @@
 
     </main>
     <!-- Footer -->
-    <footer class="footer pt-5 pb-1">
+    {% if user.is_authenticated %}
+    <footer class="pt-5 pb-1 bg-danger" id="Member">
+    {% else %}
+    <footer class="pt-5 pb-1" id="Normal">
+    {% endif %}
         <div class="container">
             <div class="row text-left">
                 <div class="col-8">
