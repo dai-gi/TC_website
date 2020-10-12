@@ -85,7 +85,7 @@
                 <div class="card-body">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
-                    <a class="btn btn-secondary" href="{% url 'post_detail' post.id %}">詳細</a>
+                    <a class="btn text-light" href="{% url 'post_detail' post.id %}">詳細</a>
                     <small class="text-muted">{{ post.published_date }}</small>
                 </div>
             </div>
@@ -101,22 +101,20 @@
 {% block contact %}
 <section class="py-5 bg-light" id="contact">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="text-center col-12 pb-5">
-                <h1 class="section-heading">お問い合わせ</h1>
-                <hr class="w-25">
-            </div>
-            <div class="border py-5 col-3">
-                <h2 class="text-center">お問い合わせ</h2>
-                <p class="text-center">contact</p>
-                <hr class="text-center w-25">
+        <div class="row justify-content-center my-5">
+            <div class="border py-5 px-4 col-3">
+                <h2 class="text-center">Contact</h2>
+                <p class="text-center">
+                    <small>お問い合わせ</small>
+                </p>
+                <hr class="text-center w-25 my-4">
                 <p class="text-center">ご相談・ご質問等ございましたら、お気軽にご相談ください</p>
             </div>
-            <div class="border py-5 ml-1 col-6">
+            <div class="border pt-5 ml-1 col-6">
                 <h1 class="text-center">080-1234-5678</h1>
-                <p class="text-center">受付時間：平日９時 ~ 17時</p>
+                <p class="text-center my-4">受付時間：平日９時 ~ 17時</p>
                 <div class="d-flex justify-content-center">
-                    <a class="btn btn-secondary w-75 py-3" href="/">お問い合わせ</a>
+                    <a class="btn text-light w-75 py-3" href="/">お問い合わせ</a>
                 </div>
             </div>
         </div>
