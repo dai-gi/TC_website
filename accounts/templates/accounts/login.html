@@ -1,50 +1,30 @@
 {% extends "app/base.html" %}
 {% load widget_tweaks %}
 
-{% block navigation %}
-<nav class="navbar navbar-expand-lg navbar-dark navbar_main" role="navigation">
-    <div class="container">
-        <a class="navbar-brand display-1 ml-4" href="{% url 'index'%}">TC</a>
-        <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbar"
-            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav justify-content-end" id="navbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index'%}#company">会社情報</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index'%}#business">業務内容</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'post_list'%}">BLOG</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">お問い合わせ</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-{% endblock %}
-
 {% block work %}
-<div class="card card-auth mx-auto">
-    <div class="card-body">
-        <h5 class="card-title text-center">ログイン</h5>
-        <form method="post" class="form-auth">
-            {% csrf_token %}
-            <div class="form-label-group">
-                {% render_field form.login class="form-control" placeholder="ユーザー名" %}
+<div class="container bg-success mh-100"id="account">
+    <div class="row align-items-center bg-secondary">
+        <h1 class="col-12 text-center bg-primary">
+            <a class="text-dark" href="">TC LOGO</a>
+        </h1>
+        <h1 class="col-12 text-center">log in</h1>
+        <div class="col-4 card card-auth mx-auto">
+            <div class="card-body">
+                <h5 class="card-title text-center">ログイン</h5>
+                <form method="post" class="form-auth">
+                    {% csrf_token %}
+                    <div class="form-label-group">
+                        {% render_field form.login class="form-control" placeholder="ユーザー名" %}
+                    </div>
+                    <div class="form-label-group">
+                        {% render_field form.password class="form-control" placeholder="パスワード" %}
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="submit">ログイン</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-label-group">
-                {% render_field form.password class="form-control" placeholder="パスワード" %}
-            </div>
-            <div class="text-center">
-                <button class="btn btn-primary" type="submit">ログイン</button>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 {% endblock %}
