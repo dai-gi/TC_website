@@ -1,4 +1,4 @@
-/* ALL_STYLE */
+/* OVERALL_STYLE */
 body {
     font-family: 'MS Pゴシック';
 }
@@ -80,6 +80,9 @@ footer {
 /* ACCOUNT */
 #account{
     height: 100%;
+}
+.account{
+    margin-top: 150px;
 }
 /* .card-auth {
     width: 400px;
