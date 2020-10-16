@@ -1,30 +1,30 @@
 {% extends "app/base.html" %}
 {% load widget_tweaks %}
 
-{% block work %}
-<div class="container bg-success mh-100"id="account">
-    <div class="row align-items-center bg-secondary">
-        <h1 class="col-12 text-center bg-primary">
-            <a class="text-dark" href="">TC LOGO</a>
-        </h1>
-        <h1 class="col-12 text-center">log in</h1>
-        <div class="col-4 card card-auth mx-auto">
-            <div class="card-body">
-                <h5 class="card-title text-center">ログイン</h5>
-                <form method="post" class="form-auth">
-                    {% csrf_token %}
-                    <div class="form-label-group">
-                        {% render_field form.login class="form-control" placeholder="ユーザー名" %}
-                    </div>
-                    <div class="form-label-group">
-                        {% render_field form.password class="form-control" placeholder="パスワード" %}
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-primary" type="submit">ログイン</button>
-                    </div>
-                </form>
-            </div>
+
+{% block post %}
+<div class="account">
+    <h1 class="col-12 text-center">
+        <a class="text-dark" href="">TC LOGO</a>
+    </h1>
+    <h1 class="col-12 text-center">log in</h1>
+    <div class="col-2 card card-auth mx-auto">
+        <div class="card-body">
+            <form method="post" class="form-auth">
+                {% csrf_token %}
+                <p>ユーザーID</p>
+                <div class="form-label-group mt-2">
+                    {% render_field form.login class="form-control" placeholder="ユーザー名" %}
+                </div>
+                <div class="form-label-group my-4">
+                    {% render_field form.password class="form-control" placeholder="パスワード" %}
+                </div>
+                <div class="text-center mb-2">
+                    <button class="btn btn-primary" type="submit">ログイン</button>
+                </div>
+            </form>
         </div>
     </div>
+
 </div>
 {% endblock %}
