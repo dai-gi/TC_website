@@ -7,24 +7,27 @@
     <h1 class="col-12 text-center">
         <a class="text-dark" href="">TC LOGO</a>
     </h1>
-    <h1 class="col-12 text-center">log in</h1>
-    <div class="col-2 card card-auth mx-auto">
+    <h1 class="col-12 text-center">Login</h1>
+    <div class="col-2 card card-auth mx-auto mt-4">
         <div class="card-body">
             <form method="post" class="form-auth">
                 {% csrf_token %}
-                <p>ユーザーID</p>
-                <div class="form-label-group mt-2">
+                <p>UserNname</p>
+                <div>
                     {% render_field form.login class="form-control" placeholder="ユーザー名" %}
                 </div>
-                <div class="form-label-group my-4">
+                <p class="mt-4">Password</p>
+                <div>
                     {% render_field form.password class="form-control" placeholder="パスワード" %}
                 </div>
-                <div class="text-center mb-2">
-                    <button class="btn btn-primary" type="submit">ログイン</button>
+                <div class="text-center mt-4 mb-2">
+                    <button class="btn text-light" type="submit">ログイン</button>
                 </div>
             </form>
         </div>
     </div>
-
+    <div class="text-center mt-3">
+        <a class="text-dark h5" href="/">return</a>
+    </div>
 </div>
 {% endblock %}
