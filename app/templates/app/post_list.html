@@ -53,12 +53,13 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text">{{ post.content|truncatechars:100 }}</p>
-                    <div class="btn btn-warning">詳細</div>
+                    <div class="btn btn_member">
+                        <a class="text-light stretched-link" href="{% url 'post_detail' post.id %}">詳細</a>
+                    </div>
                 </div>
                 <div class="card-footer text-muted">
                     {{ post.created|date }} by {{ post.author }}
                 </div>
-                <a class="stretched-link" href="{% url 'post_detail' post.id %}"></a>
             </div>
             {% endfor %}
         </div>
@@ -71,7 +72,7 @@
                         <div class="col-md-6">
                             <ul class="list-unstyled">
                                 <li>
-                                    <a class="text-dark" href="{% url 'category' category %}">
+                                    <a class="text-secondary" href="{% url 'category' category %}">
                                         {{ category.name }}
                                     </a>
                                 </li>
