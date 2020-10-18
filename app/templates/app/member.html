@@ -99,16 +99,18 @@
                         <a class="text-light h1" href="{% url 'index'%}">TC</a>
                     </div>
                     <div class="col-auto h5">
-                        <a class="text-light" href="{% url 'index'%}#company">Company</a>
-                    </div>
-                    <div class="col-auto h5">
                         <a class="text-light" href="{% url 'index'%}#business">Work</a>
                     </div>
                     <div class="col-auto h5">
                         <a class="text-light" href="{% url 'post_list'%}">Blog</a>
                     </div>
-                    <div class="col-auto h5">
-                        <a class="text-light" href="/">Contact</a>
+                    <div class="dropdown h5 col-auto">
+                        <a class="dropdown-toggle text-light" href="#" id="dropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">New Post</a>
+                        <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
+                            <a class="dropdown-item text-secondary" href="{% url 'work_new' %}">Work</a>
+                            <a class="dropdown-item text-secondary" href="{% url 'post_new' %}">Blog</a>
+                        </div>
                     </div>
                 </div>
             </div>
