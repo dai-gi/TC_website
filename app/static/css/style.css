@@ -82,13 +82,12 @@ footer {
     height: 100%;
 }
 .account{
-    margin-top: 100px;
+    margin-top: 150px;
 }
-.mt-3 .h5 {
+.text-center .text-dark {
     text-decoration: none;
 }
 .card-auth {
-    width: 400px;
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1);
