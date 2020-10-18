@@ -60,23 +60,23 @@
 {% endblock %}
 
 {% block post %}
-<section class="" id="info">
+<section id="info">
     <div class="container">
         <div class="text-center my-5">
             <h1>BLOG</h1>
             <hr class="w-25">
         </div>
-        <div class="row mb-5">
+        <div class="row mb-5 justify-content-center">
             {% if post_data %}
             {% for post in post_data %}
-            <div class="card col-md-3 col-xs-12 my-3">
+            <div class="card col-md-3 my-3 mx-md-3">
                 {% if post.image %}
                 <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
                 {% endif %}
                 <div class="card-body">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
-                    <a class="btn btn-outline-secondary" href="{% url 'post_detail' post.id %}">詳細</a>
+                    <a class="btn btn_member text-light" href="{% url 'post_detail' post.id %}">詳細</a>
                     <small class="text-muted">{{ post.published_date }}</small>
                 </div>
             </div>
