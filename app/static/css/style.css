@@ -39,8 +39,11 @@ tbody tr {
     object-fit: cover;
     height: 240px;
 }
-.card-body .btn {
+.card-body .btn_main {
     background-color: #023e8a;
+}
+.card-body .btn_member {
+    background-color: #720505;
 }
 
 /* POST_DETAIL */
