@@ -1,16 +1,17 @@
 {% extends "app/base.html" %}
 
-
 {% block work %}
-<div class="card card-auth mx-auto">
-    <div class="card-body">
-        <p class="card-title text-center">ログアウトしますか？</p>
-        <form method="post" class="form-auth">
-            {% csrf_token %}
-            <div class="text-center">
-                <button class="btn btn-warning" type="submit">ログアウト</button>
-            </div>
-        </form>
+<div class="account">
+    <div class="col-3 card card-auth mx-auto">
+        <div class="card-body">
+            <p class="card-title text-center my-4">ログアウトしますか？</p>
+            <form method="post" class="form-auth my-3">
+                {% csrf_token %}
+                <div class="text-center">
+                    <button class="btn btn-warning" type="submit">Logout</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
