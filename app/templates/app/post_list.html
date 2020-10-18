@@ -43,13 +43,7 @@
 
 {% block post %}
 <div class="container post">
-    <div class="row my-4">
-        {% if user.is_authenticated %}
-        <div class="col-12 ">
-            <a class="btn btn-primary" href="{% url 'post_new' %}" role="button">投稿</a>
-        </div>
-        {% else %}
-        {% endif %}
+    <div class="row">
         <div class="col-md-8">
             {% if keyword %}
             <h4 class="mb-4">「{{ keyword }}」の検索結果</h4>
@@ -69,7 +63,7 @@
             {% endfor %}
         </div>
         <div class="col-md-4">
-            <div class="card my-4">
+            <div class="card">
                 <h5 class="card-header">カテゴリ</h5>
                 <div class="card-body">
                     <div class="row">
