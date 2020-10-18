@@ -1,40 +1,34 @@
 {% extends 'app/base.html' %}
 
 {% block navigation %}
-<nav class="navbar navbar-expand-lg navbar-light bg-danger" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark navbar_member" role="navigation">
     <div class="container">
         <a class="navbar-brand" href="{% url 'member'%}">TC</a>
         <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbar"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse nav justify-content-end" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'work_list'%}">案件情報</a>
+                    <a class="nav-link" href="{% url 'work_list'%}">案件情報</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post_list'%}">BLOG</a>
+                    <a class="nav-link" href="{% url 'post_list'%}">BLOG</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">新規投稿</a>
                     <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
-                        <a class="dropdown-item text-light" href="{% url 'work_new' %}">案件</a>
-                        <a class="dropdown-item text-light" href="{% url 'post_new' %}">建設情報</a>
+                        <a class="dropdown-item" href="{% url 'work_new' %}">案件</a>
+                        <a class="dropdown-item" href="{% url 'post_new' %}">建設情報</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'work_list' %}">案件情報</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'account_logout' %}">ログアウト</a>
+                    <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
                 </li>
                 {% else %}
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'account_login' %}">ログイン</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="{% url 'account_signup' %}">サインアップ</a>
                 </li>
@@ -44,6 +38,15 @@
     </div>
 </nav>
 {% endblock %}
+
+{% block Image %}
+<div class="jumbotron jumbotron-fluid mb-0 d-flex justify-content-center mh-100">
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="display-3" style="color: #a0a0a0">1450 x 650</h1>
+    </div>
+</div>
+{% endblock %}
+
 
 {% block work %}
 <section class="py-5 bg-light" id="work">
@@ -84,4 +87,43 @@
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block footer %}
+<footer class="pt-5 pb-1 footer_member">
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 text-light mb-3">
+                        <a class="text-light h1" href="{% url 'index'%}">TC</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'index'%}#company">Company</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'index'%}#business">Work</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'post_list'%}">Blog</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="/">Contact</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <!-- <a class="text-light" href="{% url 'account_login' %}">Members Only</a> -->
+                        <a class="text-light" href="{% url 'account_signup' %}">Members Only</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text-right text-light">
+                <p>〒123-4567</p>
+                <p>東京都千代田区9-99-99</p>
+                <p class="mb-0">TCビル</p>
+            </div>
+        </div>
+        <hr class="w-100 bg-light">
+        <p class="text-light text-center mt-4 mb-3">&copy; 2018 TC ALL RIGHTS REXERVED.</p>
+    </div>
+</footer>
 {% endblock %}
