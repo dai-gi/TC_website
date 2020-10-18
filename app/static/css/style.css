@@ -29,6 +29,12 @@ thead {
 tbody tr {
     background-color: none;
 }
+.btn_member .text-light {
+    text-decoration: none;
+}
+.list-unstyled .text-secondary {
+    text-decoration: none;
+}
 
 /* POST */
 .card-title {
