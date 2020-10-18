@@ -2,28 +2,35 @@
 {% load widget_tweaks %}
 
 {% block work %}
-<div class="card card-auth mx-auto">
-    <div class="card-body">
-        <h5 class="card-title text-center">サインアップ</h5>
-        <form method="post" class="form-auth">
-            {% csrf_token %}
-            <div class="form-label-group">
-                {% render_field form.username class="form-control" placeholder="ユーザー名" %}
-            </div>
-            <div class="form-label-group">
-                {% render_field form.email class="form-control" placeholder="メールアドレス" %}
-            </div>
-            <div class="form-label-group">
-                {% render_field form.password1 class="form-control" placeholder="パスワード" %}
-            </div>
-            <div class="form-label-group">
-                {% render_field form.password2 class="form-control" placeholder="パスワード(確認)" %}
-            </div>
-            <div class="text-center">
-                <button class="btn btn-primary" type="submit">サインアップ</button>
-            </div>
-        </form>
+<div class="account">
+    <h3 class="text-center">
+        <a class="text-dark" href="/">TC LOGO</a>
+    </h3>
+    <div class="col-2 card card-auth mx-auto">
+        <div class="card-body">
+            <h4 class="text-center">Signup</h4>
+            <form method="post" class="form-auth">
+                {% csrf_token %}
+                <div class="mt-3">
+                    {% render_field form.username class="form-control" placeholder="ユーザー名" %}
+                </div>
+                <div class="mt-2">
+                    {% render_field form.email class="form-control" placeholder="メールアドレス" %}
+                </div>
+                <div class="mt-2">
+                    {% render_field form.password1 class="form-control" placeholder="パスワード" %}
+                </div>
+                <div class="mt-2">
+                    {% render_field form.password2 class="form-control" placeholder="パスワード(確認)" %}
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary" type="submit">サインアップ</button>
+                </div>
+            </form>
+            <h5 class="text-center mt-3 mb-0">
+                <a href="{% url 'account_login' %}" class="text-dark">log in</a>
+            </h5>
+        </div>
     </div>
 </div>
 {% endblock %}
-
