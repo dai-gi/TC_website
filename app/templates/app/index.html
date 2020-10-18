@@ -97,7 +97,7 @@
                 <div class="card-body">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
-                    <a class="btn text-light" href="{% url 'post_detail' post.id %}">詳細</a>
+                    <a class="btn btn_main text-light" href="{% url 'post_detail' post.id %}">詳細</a>
                     <small class="text-muted">{{ post.published_date }}</small>
                 </div>
             </div>
