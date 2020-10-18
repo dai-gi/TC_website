@@ -69,8 +69,11 @@ tbody tr {
 .col-8 a {
     text-decoration: none;
 }
-footer {
+.footer_main {
         background-color: #023e8a;
+}
+.footer_member {
+        background-color: #720505;
 }
 
 
