@@ -6,14 +6,11 @@ body {
 /* NAVI */
 .navbar_main {
     background-color: #023e8a;
-    color: #80A0C0;
 }
-.nav_title{
-    color: #80A0C0;
+.navbar_member {
+    background-color: #720505;
 }
-button span .navbar-toggler-icon {
-    background-color: #ffffff;
-}
+
 
 /* TOP_IMAGE */
 .jumbotron {
