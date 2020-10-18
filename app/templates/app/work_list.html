@@ -53,17 +53,18 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ work.title }}</h2>
                     <p class="card-text">{{ work.content|truncatechars:100 }}</p>
-                    <div class="btn btn-warning">詳細</div>
+                    <div class="btn btn_member">
+                        <a class="text-light stretched-link" href="{% url 'work_detail' work.id %}">詳細</a>
+                    </div>
                 </div>
                 <div class="card-footer text-muted">
                     {{ work.created|date }} by {{ work.author }}
                 </div>
-                <a class="stretched-link" href="{% url 'work_detail' work.id %}"></a>
             </div>
             {% endfor %}
         </div>
         <div class="col-md-4">
-            <div class="card my-4">
+            <div class="card">
                 <h5 class="card-header">カテゴリ</h5>
                 <div class="card-body">
                     <div class="row">
@@ -71,7 +72,7 @@
                         <div class="col-md-6">
                             <ul class="list-unstyled">
                                 <li>
-                                    <a class="text-dark" href="{% url 'work_category' work_category %}">
+                                    <a class="text-secondary" href="{% url 'work_category' work_category %}">
                                         {{ work_category.name }}
                                     </a>
                                 </li>
