@@ -86,3 +86,40 @@
     </div>
 </div>
 {% endblock %}
+
+{% block footer %}
+<footer class="pt-5 pb-1 footer_member">
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 text-light mb-3">
+                        <a class="text-light h1" href="{% url 'member'%}">TC</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'index'%}#business">Work</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'post_list'%}">Blog</a>
+                    </div>
+                    <div class="dropdown h5 col-auto">
+                        <a class="dropdown-toggle text-light" href="#" id="dropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">New Post</a>
+                        <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
+                            <a class="dropdown-item text-secondary" href="{% url 'work_new' %}">Work</a>
+                            <a class="dropdown-item text-secondary" href="{% url 'post_new' %}">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text-right text-light">
+                <p>〒123-4567</p>
+                <p>東京都千代田区9-99-99</p>
+                <p class="mb-0">TCビル</p>
+            </div>
+        </div>
+        <hr class="w-100 bg-light">
+        <p class="text-light text-center mt-4 mb-3">&copy; 2018 TC ALL RIGHTS REXERVED.</p>
+    </div>
+</footer>
+{% endblock %}
