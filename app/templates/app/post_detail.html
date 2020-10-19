@@ -1,59 +1,36 @@
 {% extends "app/base.html" %}
 
 {% block navigation %}
-{% if user.is_authenticated %}
-<nav class="navbar navbar-expand-lg navbar-light bg-danger" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark navbar_member" role="navigation">
     <div class="container">
-        <a class="navbar-brand text-light" href="{% url 'member'%}">TC</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{% url 'member'%}">TC</a>
+        <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse nav justify-content-end" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'work_list'%}">案件情報</a>
+                    <a class="nav-link" href="{% url 'work_list'%}">Work</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post_list'%}">BLOG</a>
+                <li class="nav-item ml-4">
+                    <a class="nav-link" href="{% url 'post_list'%}">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'account_logout' %}">ログアウト</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link ml-4 dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">New Post</a>
+                    <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
+                        <a class="dropdown-item text-secondary" href="{% url 'work_new' %}">Work</a>
+                        <a class="dropdown-item text-secondary" href="{% url 'post_new' %}">Blog</a>
+                    </div>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'account_signup' %}">サインアップ</a>
-                </li> -->
-            </ul>
-        </div>
-    </div>
-</nav>
-{% else %}
-<nav class="navbar navbar-expand-lg navbar-light bg-primary" role="navigation">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'index'%}">TC</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'index'%}#company">会社情報</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'index'%}#business">業務内容</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{% url 'post_list'%}">BLOG</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="/">お問い合わせ</a>
+                <li class="nav-item ml-4">
+                    <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-{% endif %}
 {% endblock %}
 
 {% block post %}
