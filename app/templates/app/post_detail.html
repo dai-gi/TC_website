@@ -35,22 +35,83 @@
 
 {% block post %}
 <div class="container post">
-    <h1 class="pb-3">{{ post_data.title }}</h1>
-    <hr class="mt-1">
-    <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
-    {% if post_data.image %}
-    <hr>
-    <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="">
-    {% endif %}
-    <hr>
-    <p class="py-5">{{ post_data.text|linebreaksbr }}</p>
-    <hr class="pt-5 mb-0">
-    {% if user.is_authenticated %}
-    <div class="d-flex mb-5">
-        <a class="btn btn-outline-warning mr-3" href="{% url 'post_edit' post_data.id %}">編集する</a>
-        <a class="btn btn-outline-danger mr-3" href="{% url 'post_delete' post_data.id %}">削除する</a>
-        <a class="btn btn-outline-primary" href="{% url 'member' %}">戻る</a>
+    <div class="row">
+        <div class="col-8">
+            <h1 class="pb-3">{{ post_data.title }}</h1>
+            <hr class="mt-1">
+            <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
+            {% if post_data.image %}
+            <hr>
+            <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="">
+            {% endif %}
+            <hr>
+            <p class="py-5">{{ post_data.text|linebreaksbr }}</p>
+            <hr class="">
+            {% if user.is_authenticated %}
+            <div class="d-flex mb-5">
+                <a class="btn btn_yellow text-light mr-3" href="{% url 'post_edit' post_data.id %}">編集する</a>
+                <a class="btn btn_red text-light mr-3" href="{% url 'post_delete' post_data.id %}">削除する</a>
+                <a class="btn btn_blue text-light" href="{% url 'member' %}">戻る</a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <h5 class="card-header text-center">カテゴリ</h5>
+                <div class="card-body">
+                    <div class="row">
+                        {% for category in category_data %}
+                        <div class="col-4 text-center">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-secondary" href="{% url 'category' category %}">
+                                        {{ category.name }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    {% endif %}
 </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="pt-5 pb-1 footer_member">
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 text-light mb-3">
+                        <a class="text-light h1" href="{% url 'member'%}">TC</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'work_list'%}">Work</a>
+                    </div>
+                    <div class="col-auto h5">
+                        <a class="text-light" href="{% url 'post_list'%}">Blog</a>
+                    </div>
+                    <div class="dropdown h5 col-auto">
+                        <a class="dropdown-toggle text-light" href="#" id="dropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">New Post</a>
+                        <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
+                            <a class="dropdown-item text-secondary" href="{% url 'work_new' %}">Work</a>
+                            <a class="dropdown-item text-secondary" href="{% url 'post_new' %}">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text-right text-light">
+                <p>〒123-4567</p>
+                <p>東京都千代田区9-99-99</p>
+                <p class="mb-0">TCビル</p>
+            </div>
+        </div>
+        <hr class="w-100 bg-light">
+        <p class="text-light text-center mt-4 mb-3">&copy; 2018 TC ALL RIGHTS REXERVED.</p>
+    </div>
+</footer>
 {% endblock %}
