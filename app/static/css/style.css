@@ -2,13 +2,22 @@
 body {
     font-family: 'MS Pゴシック';
 }
+.btn_blue {
+    background-color: #023d8ad7;
+}
+.btn_red {
+    background-color: #720505de;
+}
+.btn_yellow {
+    background-color: #c59100d7;
+}
 
 /* NAVI */
 .navbar_main {
-    background-color: #023e8a;
+    background-color: #023d8ad7;
 }
 .navbar_member {
-    background-color: #720505;
+    background-color: #720505de;
 }
 
 
@@ -46,10 +55,10 @@ tbody tr {
     height: 240px;
 }
 .card-body .btn_main {
-    background-color: #023e8a;
+    background-color: #023d8ad7;
 }
 .card-body .btn_member {
-    background-color: #720505;
+    background-color: #720505de;
 }
 
 /* POST_DETAIL */
@@ -71,7 +80,7 @@ tbody tr {
 
 /* CONTACT */
 .border .btn {
-    background-color: #023e8a;
+    background-color: #023d8ad7;
 }
 
 /* FOOTER */
@@ -79,10 +88,10 @@ tbody tr {
     text-decoration: none;
 }
 .footer_main {
-        background-color: #023e8a;
+        background-color: #023d8ad7;
 }
 .footer_member {
-        background-color: #720505;
+        background-color: #720505de;
 }
 
 
