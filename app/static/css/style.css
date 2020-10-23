@@ -44,6 +44,12 @@ tbody tr {
 .list-unstyled .text-secondary {
     text-decoration: none;
 }
+.category {
+    background-color: #fafafa;
+}
+.col-md-3 .text-secondary {
+    text-decoration: none;
+}
 
 /* POST */
 .card-title {
