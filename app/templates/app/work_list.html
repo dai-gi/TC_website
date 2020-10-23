@@ -71,8 +71,8 @@
                         {% for work_category in work_category_data %}
                         <div class="col-md-6">
                             <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-secondary" href="{% url 'work_category' work_category %}">
+                                <li class="row">
+                                    <a class="btn btn-secondary text-secondary text-light col-12" href="{% url 'work_category' work_category %}">
                                         {{ work_category.name }}
                                     </a>
                                 </li>
