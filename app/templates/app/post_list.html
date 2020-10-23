@@ -63,23 +63,19 @@
             </div>
             {% endfor %}
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <h5 class="card-header">カテゴリ</h5>
-                <div class="card-body">
-                    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-group">
+                        <li class="text-secondary h5 category p-3 mb-0 list-group-item">カテゴリ</li>
                         {% for category in category_data %}
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a class="text-secondary" href="{% url 'category' category %}">
-                                        {{ category.name }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <li class="list-group-item">
+                            <a class="text-secondary stretched-link" href="{% url 'category' category %}">
+                                {{ category.name }}
+                            </a>
+                        </li>
                         {% endfor %}
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -103,7 +99,7 @@
                         <a class="text-light" href="{% url 'post_list'%}">Blog</a>
                     </div>
                     <div class="dropdown h5 col-auto">
-                        <a class="dropdown-toggle text-light" href="#" id="dropdown" data-toggle="dropdown"
+                        <a class="dropdown-toggle text-light" href="#"data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">New Post</a>
                         <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
                             <a class="dropdown-item text-secondary" href="{% url 'work_new' %}">Work</a>
