@@ -35,30 +35,52 @@
 
 {% block work %}
 <div class="container post">
-
-    <form method="get" action="{% url 'search' %}" class="form-inline my-2 my-md-0">
-        <input type="text" class="form-control" name="keyword" placeholder="案件検索...">
-        <button class="btn btn-outline-light my-2 my-sm-0 ml-3" type="submit">検索</button>
-    </form>
-
-    <h1 class="pb-3">{{ work_data.title }}</h1>
-    <p>{{ work_data.work_category }}</p>
-    <hr class="mt-1">
-    <p class="py-3">{{ work_data.published_date }} by {{ work_data.author }}</p>
-    <hr>
-    <p>{{ work_data.address }}</p>
-    <p>{{ work_data.staff }}</p>
-    <p>{{ work_data.tel }}</p>
-    <p>{{ work_data.price }}</p>
-    <p>{{ work_data.text|linebreaksbr }}</p>
-    {% if user.is_authenticated %}
-    <hr class="pt-5 mb-0">
-    <div class="d-flex mb-5">
-        <a class="btn btn-warning mr-3" href="{% url 'work_edit' work_data.id %}">編集する</a>
-        <a class="btn btn-danger mr-3" href="{% url 'work_delete' work_data.id %}">削除する</a>
-        <a class="btn btn-primary" href="{% url 'work_list' %}">戻る</a>
+    <div class="row mb-5">
+        <div class="col-md-9 border py-5">
+            <p>
+                <small class="font-weight-bold">{{ work_data.published_date }} by {{ work_data.author }}</small>
+            </p>
+            <h3 class="pb-3">{{ work_data.title }}</h3>
+            <p>{{ work_data.work_category }}</p>
+            <hr>
+            <p>{{ work_data.address }}</p>
+            <p>{{ work_data.staff }}</p>
+            <p>{{ work_data.tel }}</p>
+            <p>{{ work_data.price }}</p>
+            <p>{{ work_data.text|linebreaksbr }}</p>
+            {% if user.is_authenticated %}
+            <hr class="pt-5 mb-0">
+            {% endif %}
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-group">
+                        <li class="text-secondary h5 category p-3 mb-0 list-group-item">カテゴリ</li>
+                        {% for work_category in work_category_data %}
+                        <li class="list-group-item">
+                            <a class="text-secondary stretched-link" href="{% url 'work_category' work_category %}">
+                                {{ work_category.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="list-group py-3">
+                        <li class="text-secondary h5 category p-3 mb-0 list-group-item">編集</li>
+                        <li class="list-group-item">
+                            <a class="text-secondary stretched-link" href="{% url 'work_edit' work_data.id %}">編集する</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="text-secondary stretched-link" href="{% url 'work_delete' work_data.id %}">削除する</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="text-secondary stretched-link" href="{% url 'work_list' %}">戻る</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    {% endif %}
 </div>
 
 {% endblock %}
