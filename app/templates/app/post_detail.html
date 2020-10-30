@@ -35,43 +35,42 @@
 
 {% block post %}
 <div class="container post">
-    <div class="row">
-        <div class="col-8">
-            <h1 class="pb-3">{{ post_data.title }}</h1>
-            <hr class="mt-1">
-            <p class="py-3">{{ post_data.published_date }} by {{ post_data.author }}</p>
-            {% if post_data.image %}
-            <hr>
-            <img class="rounded detail-img" src="{{ post_data.image.url }}" alt="">
-            {% endif %}
-            <hr>
-            <p class="py-5">{{ post_data.text|linebreaksbr }}</p>
-            <hr class="">
-            {% if user.is_authenticated %}
-            <div class="d-flex mb-5">
-                <a class="btn btn_yellow text-light mr-3" href="{% url 'post_edit' post_data.id %}">編集する</a>
-                <a class="btn btn_red text-light mr-3" href="{% url 'post_delete' post_data.id %}">削除する</a>
-                <a class="btn btn_blue text-light" href="{% url 'member' %}">戻る</a>
+    <div class="category_tag text-light text-center rounded">{{ post_data.category }}</div>
+    <div class="row mb-5">
+        <div class="col-md-9 border bg-primar rounded">
+            <p class="mt-4">
+                <small class="font-weight-bold">{{ post_data.published_date }} - {{ post_data.author }}</small>
+            </p>
+            <h3 class="col-5">{{ post_data.title }}</h3>
+            <div class="container">
+                <hr class="my-5">
+                <p class="my-5">{{ post_data.text|linebreaksbr }}</p>
             </div>
-            {% endif %}
         </div>
-        <div class="col-4">
-            <div class="card">
-                <h5 class="card-header text-center">カテゴリ</h5>
-                <div class="card-body">
-                    <div class="row">
-                        {% for category in category_data %}
-                        <div class="col-4 text-center">
-                            <ul class="list-unstyled">
-                                <li class="category_list">
-                                    <a class="text-secondary" href="{% url 'category' category %}">
-                                        {{ category.name }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        {% endfor %}
-                    </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title_category h5 p-3 mb-0 category_title rounded text-dark">カテゴリ</div>
+                    {% for category in category_data %}
+                    <a class="text-light badge font-weight-light" href="{% url 'category' category %}">
+                        {{ category.name }}
+                    </a>
+                    {% endfor %}
+                    {% if user.is_authenticated %}
+                    <ul class="list-group pt-4">
+                        <li class="h5 p-3 mb-0 list-group-item category_title text-dark">編集</li>
+                        <li class="list-group-item">
+                            <a class="stretched-link text-dark" href="{% url 'post_edit' post_data.id %}">編集する</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="stretched-link text-dark" href="{% url 'post_delete' post_data.id %}">削除する</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="stretched-link text-dark" href="{% url 'post_list' %}">戻る</a>
+                        </li>
+                    </ul>
+                    {% else %}
+                    {% endif %}
                 </div>
             </div>
         </div>

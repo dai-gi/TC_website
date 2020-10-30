@@ -66,16 +66,12 @@
         <div class="col-md-3">
             <div class="row">
                 <div class="col-12">
-                    <ul class="list-group">
-                        <li class="text-secondary h5 category p-3 mb-0 list-group-item">カテゴリ</li>
-                        {% for category in category_data %}
-                        <li class="list-group-item">
-                            <a class="text-secondary stretched-link" href="{% url 'category' category %}">
-                                {{ category.name }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                    <div class="title_category h5 p-3 mb-0 category_title rounded text-dark">カテゴリ</div>
+                    {% for category in category_data %}
+                    <a class="text-light badge font-weight-light" href="{% url 'category' category %}">
+                        {{ category.name }}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

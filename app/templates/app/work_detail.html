@@ -35,48 +35,58 @@
 
 {% block work %}
 <div class="container post">
+    <div class="category_tag text-light text-center rounded">{{ work_data.work_category }}</div>
     <div class="row mb-5">
-        <div class="col-md-9 border py-5">
-            <p>
-                <small class="font-weight-bold">{{ work_data.published_date }} by {{ work_data.author }}</small>
+        <div class="col-md-9 border bg-primar rounded">
+            <p class="mt-4">
+                <small class="font-weight-bold">{{ work_data.published_date }}</small>
             </p>
-            <h3 class="pb-3">{{ work_data.title }}</h3>
-            <p>{{ work_data.work_category }}</p>
-            <hr>
-            <p>{{ work_data.address }}</p>
-            <p>{{ work_data.staff }}</p>
-            <p>{{ work_data.tel }}</p>
-            <p>{{ work_data.price }}</p>
-            <p>{{ work_data.text|linebreaksbr }}</p>
-            {% if user.is_authenticated %}
-            <hr class="pt-5 mb-0">
-            {% endif %}
+            <h3 class="col-5">{{ work_data.title }}<small class="pl-3">¥{{ work_data.price }}</small></h3>
+            <div class="container">
+                <div class="row py-4">
+                    <ul class="list-group list-group-horizontal col-12">
+                        <li class="list-group-item col-2 list_title text-center">現場住所</li>
+                        <li class="list-group-item col-10">{{ work_data.address }}</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal col-12 my-3">
+                        <li class="list-group-item col-2 list_title text-center">担当者</li>
+                        <li class="list-group-item col-10">{{ work_data.staff }}</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal col-12">
+                        <li class="list-group-item col-2 list_title text-center">電話番号</li>
+                        <li class="list-group-item col-10">{{ work_data.tel }}</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal col-12 my-3">
+                        <li class="list-group-item col-2 text-center list_title">作業内容</li>
+                        <li class="list-group-item col-10">{{ work_data.text|linebreaksbr }}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-md-3">
             <div class="row">
                 <div class="col-12">
-                    <ul class="list-group">
-                        <li class="text-secondary h5 category p-3 mb-0 list-group-item">カテゴリ</li>
-                        {% for work_category in work_category_data %}
+                    <div class="title_category h5 p-3 mb-0 category_title rounded text-dark">カテゴリ</div>
+                    {% for work_category in work_category_data %}
+                    <a class="text-light badge stretched-link font-weight-light" href="{% url 'work_category' work_category %}">
+                        {{ work_category.name }}
+                    </a>
+                    {% endfor %}
+                    {% if user.is_authenticated %}
+                    <ul class="list-group pt-4">
+                        <li class="h5 p-3 mb-0 list-group-item category_title text-dark">編集</li>
                         <li class="list-group-item">
-                            <a class="text-secondary stretched-link" href="{% url 'work_category' work_category %}">
-                                {{ work_category.name }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    <ul class="list-group py-3">
-                        <li class="text-secondary h5 category p-3 mb-0 list-group-item">編集</li>
-                        <li class="list-group-item">
-                            <a class="text-secondary stretched-link" href="{% url 'work_edit' work_data.id %}">編集する</a>
+                            <a class="stretched-link text-dark" href="{% url 'work_edit' work_data.id %}">編集する</a>
                         </li>
                         <li class="list-group-item">
-                            <a class="text-secondary stretched-link" href="{% url 'work_delete' work_data.id %}">削除する</a>
+                            <a class="stretched-link text-dark" href="{% url 'work_delete' work_data.id %}">削除する</a>
                         </li>
                         <li class="list-group-item">
-                            <a class="text-secondary stretched-link" href="{% url 'work_list' %}">戻る</a>
+                            <a class="stretched-link text-dark" href="{% url 'work_list' %}">戻る</a>
                         </li>
                     </ul>
+                    {% else %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -101,7 +111,7 @@
                         <a class="text-light" href="{% url 'post_list'%}">Blog</a>
                     </div>
                     <div class="dropdown h5 col-auto">
-                        <a class="dropdown-toggle text-light" href="#" id="dropdown" data-toggle="dropdown"
+                        <a class="dropdown-toggle text-light" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">New Post</a>
                         <div class="dropdown-menu mt-3" aria-labelledby="dropdown">
                             <a class="dropdown-item text-secondary" href="{% url 'work_new' %}">Work</a>

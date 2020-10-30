@@ -11,13 +11,32 @@ body {
 .btn_yellow {
     background-color: #c59100d7;
 }
+.category_tag {
+    transform: translate(-2rem, 0rem) rotate(-5deg);
+    background-color: #621708;
+    width: 150px;
+    position: relative;
+    z-index: 2;
+}
+.list_title {
+    background-color: #d3d3d3;
+}
+.category_title {
+    background-color: #d3d3d3;
+}
+.title_category {
+    border: solid 1px #c0c0c0;
+}
+.badge {
+    background-color: #621708;
+}
 
 /* NAVI */
 .navbar_main {
     background-color: #023d8ad7;
 }
 .navbar_member {
-    background-color: #720505de;
+    background-color: #621708;
 }
 
 
@@ -35,27 +54,14 @@ thead {
     color: #fefcfb;
     background-color: #034078;
 }
-tbody tr {
-    background-color: none;
-}
-.btn_member .text-light {
-    text-decoration: none;
-}
-.list-unstyled .text-secondary {
-    text-decoration: none;
-}
 .category {
     background-color: #fafafa;
-}
-.col-md-3 .text-secondary {
-    text-decoration: none;
 }
 
 /* POST */
 .card-title {
     font-size: 1.5rem;
 }
-
 .index-img {
     object-fit: cover;
     height: 240px;
@@ -90,14 +96,11 @@ tbody tr {
 }
 
 /* FOOTER */
-.col-8 a {
-    text-decoration: none;
-}
 .footer_main {
         background-color: #023d8ad7;
 }
 .footer_member {
-        background-color: #720505de;
+        background-color: #621708;
 }
 
 
@@ -107,9 +110,6 @@ tbody tr {
 }
 .account{
     margin-top: 150px;
-}
-.text-center .text-dark {
-    text-decoration: none;
 }
 .card-auth {
     border: 0;
