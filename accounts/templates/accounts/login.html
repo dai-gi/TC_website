@@ -1,4 +1,4 @@
-{% extends "app/base.html" %}
+{% extends "app/base_account.html" %}
 {% load widget_tweaks %}
 
 
@@ -23,7 +23,7 @@
                 </div>
             </form>
             <h5 class="text-center mb-0">
-                <a class="text-dark" href="/">Top Page</a>
+                <a class="text-dark" href="{% url 'account_signup' %}">sign up</a>
             </h5>
         </div>
     </div>

@@ -2,15 +2,19 @@
 body {
     font-family: 'MS Pゴシック';
 }
+
 .btn_blue {
-    background-color: #023d8ad7;
+    background-color: #03045e;
 }
+
 .btn_red {
-    background-color: #720505de;
+    background-color: #621708;
 }
+
 .btn_yellow {
     background-color: #c59100d7;
 }
+
 .category_tag {
     transform: translate(-2rem, 0rem) rotate(-5deg);
     background-color: #621708;
@@ -18,25 +22,41 @@ body {
     position: relative;
     z-index: 2;
 }
+
 .list_title {
     background-color: #d3d3d3;
 }
+
 .category_title {
     background-color: #d3d3d3;
 }
+
 .title_category {
     border: solid 1px #c0c0c0;
 }
+
 .badge {
+    background-color: #03045e;
+}
+
+.badge_member {
     background-color: #621708;
 }
 
+body #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
 /* NAVI */
 .navbar_main {
-    background-color: #023d8ad7;
+    background-color: #010a5cbe;
 }
+
 .navbar_member {
-    background-color: #621708;
+    background-color: #720505de;
 }
 
 
@@ -52,8 +72,9 @@ body {
 /* WORK */
 thead {
     color: #fefcfb;
-    background-color: #034078;
+    background-color: #03045e;
 }
+
 .category {
     background-color: #fafafa;
 }
@@ -62,15 +83,18 @@ thead {
 .card-title {
     font-size: 1.5rem;
 }
+
 .index-img {
     object-fit: cover;
     height: 240px;
 }
+
 .card-body .btn_main {
-    background-color: #023d8ad7;
+    background-color: #03045e;
 }
+
 .card-body .btn_member {
-    background-color: #720505de;
+    background-color: #621708;
 }
 
 /* POST_DETAIL */
@@ -79,12 +103,12 @@ thead {
     width: 100%;
     height: 400px;
 }
+
 .post hr {
     border-top: 2px solid #c4c4c4;
     width: 100%;
-    
-}
 
+}
 .post {
     padding-top: 100px;
 }
@@ -92,25 +116,30 @@ thead {
 
 /* CONTACT */
 .contact .btn {
-    background-color: #023d8ad7;
+    background-color: #03045e;
 }
 
 /* FOOTER */
+footer {
+    margin-top: auto;
+}
 .footer_main {
-        background-color: #023d8ad7;
+    background-color: #03045e;
 }
 .footer_member {
-        background-color: #621708;
+    background-color: #621708;
 }
 
 
 /* ACCOUNT */
-#account{
+#account {
     height: 100%;
 }
-.account{
+
+.account {
     margin-top: 150px;
 }
+
 .card-auth {
     border: 0;
     border-radius: 1rem;
