@@ -1,16 +1,21 @@
 {% extends "app/base_account.html" %}
 
 {% block post %}
-<div class="account">
-    <div class="col-3 card card-auth mx-auto">
-        <div class="card-body">
-            <p class="card-title text-center my-4">ログアウトしますか？</p>
-            <form method="post" class="form-auth my-3">
-                {% csrf_token %}
-                <div class="text-center">
-                    <button class="btn btn-warning" type="submit">Logout</button>
-                </div>
-            </form>
+<div class="account container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <i class="far fa-user-circle fa-5x"></i>
+        </div>
+        <div class="col-3 card card-auth mx-auto border-light shadow-sm pt-5">
+            <p class="h5 text-center text-secondary">ログアウトしますか？</p>
+            <div class="card-body">
+                <form method="post" class="form-auth">
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <button class="btn btn-secondary account_btn" type="submit">ログアウト</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

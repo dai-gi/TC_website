@@ -2,22 +2,75 @@
 body {
     font-family: 'MS Pゴシック';
 }
+
 body #wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+
 .btn_blue {
     background-color: #03045e;
 }
+
 .btn_red {
     background-color: #621708;
 }
+
 .btn_yellow {
-    background-color: #c59100d7;
+    background-color: #927115;
 }
+
 .list_title {
     background-color: #d3d3d3;
+}
+
+.btn-main {
+    color: #fff;
+    background-color: #03045e;
+    border-color: #03045e;
+}
+
+.btn-main:hover {
+    color: #fff;
+    background-color: #0003c4;
+    border-color: #0003c4;
+}
+
+.btn-member {
+    color: #fff;
+    background-color: #621708;
+    border-color: #621708;
+}
+
+.btn-member:hover {
+    color: #fff;
+    background-color: #86220e;
+    border-color: #86220e;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #a51b00;
+    border-color: #a51b00;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #ca2200;
+    border-color: #ca2200;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ff9900;
+    border-color: #ff9900;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #fab82b;
+    border-color: #fab82b;
 }
 /* category */
 .category_tag {
@@ -27,36 +80,44 @@ body #wrapper {
     position: relative;
     z-index: 2;
 }
+
 .category_title {
     background-color: #d3d3d3;
 }
+
 .title_category {
     border: solid 1px #c0c0c0;
 }
+
 .list-unstyled .w-100 {
     border-bottom: 1px dotted #ccc;
 }
+
 /* badge */
 .badge {
     background-color: #03045e;
 }
+
 .badge_member {
     background-color: #621708;
 }
+
 /* tag */
-.tag_main{
+.tag_main {
     background-color: #03045e;
 }
-.tag_member{
+
+.tag_member {
     background-color: #621708;
 }
 
 /* NAVIBAR */
 .navbar_main {
-    background-color: #010a5cbe;
+    background-color: #010a5cda;
 }
+
 .navbar_member {
-    background-color: #720505de;
+    background-color: #621708e7;
 }
 
 
@@ -68,23 +129,28 @@ body #wrapper {
     background-position: center 60%;
     height: 650px;
 }
+
 .post_list_img {
     background-image: url("...");
     background-color: #c0c0c0;
     background-size: cover;
     background-position: center 60%;
-    height: 350px;
+    height: 300px;
 }
-.jumbotron-fluid .display-4{
+
+.jumbotron-fluid .display-4 {
     color: #a0a0a0;
 }
-.jumbotron-fluid .display-3{
+
+.jumbotron-fluid .display-3 {
     color: #a0a0a0;
 }
-.jumbotron-fluid .w-50{
+
+.jumbotron-fluid .w-50 {
     color: #a0a0a0;
 }
-.mt-100{
+
+.mt-100 {
     margin-top: 55px;
 }
 
@@ -93,6 +159,7 @@ thead {
     color: #fefcfb;
     background-color: #03045e;
 }
+
 .category {
     background-color: #fafafa;
 }
@@ -101,37 +168,38 @@ thead {
 .card {
     width: 343px;
 }
+
 .card-title {
     font-size: 1.5rem;
 }
+
 .index-img {
     object-fit: cover;
     height: 240px;
 }
+
 .card-body .btn_main {
     background-color: #03045e;
 }
+
 .card-body .btn_member {
     background-color: #621708;
 }
-.post_container {
-    margin: 100px auto;
-}
+
 /* BLOG詳細 */
 
 
 /* お問い合わせ */
-.contact .btn {
-    background-color: #03045e;
-}
 
 /* FOOTER */
 footer {
     margin-top: auto;
 }
+
 .footer_main {
     background-color: #03045e;
 }
+
 .footer_member {
     background-color: #621708;
 }
@@ -141,11 +209,18 @@ footer {
 #account {
     height: 100%;
 }
+
 .account {
     margin-top: 150px;
 }
-.card-auth {
-    border: 0;
-    border-radius: 1rem;
-    box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1);
+
+.fa-5x {
+    transform: translate(0rem, 2rem);
+    position: relative;
+    z-index: 2;
+    color: #6c757d;
+    text-shadow: 0 2px 3px rgb(36, 35, 35);
+}
+.account_btn {
+    box-shadow: 0 2px 2px rgb(36, 35, 35);
 }

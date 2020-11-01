@@ -81,7 +81,6 @@ MEDIA_URL = '/media/'
 
 
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -151,4 +150,7 @@ if DEBUG:
 if not DEBUG:
     STATIC_ROOT = '/usr/share/nginx/html/static'
     MEDIA_ROOT = '/usr/share/nginx/html/media'
+
+# セッション
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 

@@ -23,7 +23,7 @@ class MemberView(View):
         work_data = Work.objects.order_by("-id")
         return render(request, 'app/member.html', {
             'post_data': post_data,
-            'work_data': work_data
+            'work_data': work_data,
         })
 
 
