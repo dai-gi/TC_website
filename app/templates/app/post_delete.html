@@ -1,4 +1,4 @@
-{% extends "app/base.html" %}
+{% extends "app/base_member.html" %}
 
 {% block Image %}
 <div class="jumbotron-fluid mb-0 mt-100 d-flex justify-content-center post_list_img">
@@ -17,7 +17,7 @@
     <div class="category_tag tag_main text-light text-center rounded">{{ post_data.category }}</div>
     {% endif %}
     <div class="row">
-        <div class="col-9 border bg-primar rounded shadow-sm">
+        <div class="col-9 border rounded shadow-sm">
             <h2 class="col-12 text-center mt-4">削除してもよろしいですか？</h2>
             <p class="mt-4">
                 <small class="font-weight-bold">{{ post_data.published_date }} - {{ post_data.author }}</small>
@@ -27,17 +27,19 @@
                 <hr class="my-5 w-100 shadow">
                 <p class="my-5">{{ post_data.text|linebreaksbr }}</p>
             </div>
-            <form method="post">
-                {% csrf_token %}
-                <button class="btn btn-danger mb-5" type="submit">削除する</button>
-            </form>
         </div>
         <div class="col-md-3">
-            <div class="col-12 btn btn-warning text-light my-2">
-                <a class="text-light h5" href="{% url 'post_edit' post_data.id %}">編集</a>
+            <div class="col-12 btn btn-warning my-2">
+                <a class="text-light h5 stretched-link" href="{% url 'post_edit' post_data.id %}">編集</a>
             </div>
-            <div class="col-12 btn btn-danger text-light my-2">
-                <a class="text-light h5" href="{% url 'post_delete' post_data.id %}">削除</a>
+            <form method="post">
+                {% csrf_token %}
+                <div class="col-12 btn btn-danger">
+                    <a class="text-light h5 stretched-link mb-0" type="submit">削除</a>
+                </div>
+            </form>
+            <div class="col-12 btn btn-secondary my-2">
+                <a class="text-light h5 stretched-link" href="{% url 'post_detail_member' post_data.id %}">戻る</a>
             </div>
         </div>
     </div>

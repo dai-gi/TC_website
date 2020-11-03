@@ -19,26 +19,26 @@
     <div id="wrapper">
         <!-- Navigation -->
         <header role="header">
-            <nav class="navbar navbar-expand-lg navbar-dark navbar_main fixed-top" role="navigation">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar_member fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand display-1 ml-4" href="{% url 'index'%}">TC</a>
-                    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbar"
+                    <a class="navbar-brand" href="{% url 'member'%}">TC</a>
+                    <button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse nav justify-content-end">
+                    <div class="collapse navbar-collapse nav justify-content-end" id="navbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'index'%}#company">会社情報</a>
+                                <a class="nav-link" href="{% url 'work_list'%}">案件</a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a class="nav-link" href="{% url 'index'%}#business">業務内容</a>
+                                <a class="nav-link" href="{% url 'post_list_member'%}">BLOG</a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a class="nav-link" href="{% url 'post_list'%}">BLOG</a>
+                                <a class="nav-link" href="{% url 'post_new' %}">BLOG投稿</a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a class="nav-link" href="/">お問い合わせ</a>
+                                <a class="nav-link" href="{% url 'account_logout' %}">ログアウト</a>
                             </li>
                         </ul>
                     </div>
@@ -50,14 +50,6 @@
             {% block Image %}
             {% endblock %}
 
-            <!-- Company -->
-            {% block company %}
-            {% endblock %}
-
-            <!-- Business -->
-            {% block business %}
-            {% endblock %}
-
             <!-- Work -->
             {% block work %}
             {% endblock %}
@@ -66,34 +58,24 @@
             {% block post %}
             {% endblock %}
 
-            <!-- Contact -->
-            {% block contact %}
-            {% endblock %}
-
         </main>
         <!-- Footer -->
-        <footer class="pt-5 pb-1 footer_main">
+        <footer class="pt-5 pb-1 footer_member">
             <div class="container">
                 <div class="row text-left">
                     <div class="col-8">
                         <div class="row">
                             <div class="col-12 text-light mb-3">
-                                <a class="text-light h1" href="{% url 'index'%}">TC</a>
+                                <a class="text-light h1" href="{% url 'member'%}">TC</a>
                             </div>
                             <div class="col-auto h5">
-                                <a class="text-light" href="{% url 'index'%}#company">会社概要</a>
+                                <a class="text-light" href="{% url 'work_list'%}">案件</a>
                             </div>
                             <div class="col-auto h5">
-                                <a class="text-light" href="{% url 'index'%}#business">業務内容</a>
+                                <a class="text-light" href="{% url 'post_list_member'%}">BLOG</a>
                             </div>
-                            <div class="col-auto h5">
-                                <a class="text-light" href="{% url 'post_list'%}">BLOG</a>
-                            </div>
-                            <div class="col-auto h5">
-                                <a class="text-light" href="/">お問い合わせ</a>
-                            </div>
-                            <div class="col-auto h5">
-                                <a class="text-light" href="{% url 'account_login' %}">社員用</a>
+                            <div class="dropdown h5 col-auto">
+                                <a class="text-light" href="{% url 'post_new' %}">BLOG投稿</a>
                             </div>
                         </div>
                     </div>

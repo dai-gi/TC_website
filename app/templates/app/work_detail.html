@@ -1,13 +1,19 @@
-{% extends "app/base.html" %}
+{% extends "app/base_member.html" %}
+
+{% block Image %}
+<div class="jumbotron-fluid post_list_img mb-0 mt-100 d-flex justify-content-center mh-100">
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="display-4">案件</h1>
+        <hr class="w-50">
+    </div>
+</div>
+{% endblock %}
 
 {% block work %}
-<div class="container post">
-    {% if user.is_authenticated %}
+<div class="container my-5 border border-light py-3 px-5 rounded">
     <div class="category_tag text-light text-center rounded">{{ work_data.work_category }}</div>
-    {% else %}
-    {% endfor %}
-    <div class="row mb-5">
-        <div class="col-md-9 border bg-primar rounded">
+    <div class="row">
+        <div class="col-md-8 border bg-primar rounded">
             <p class="mt-4">
                 <small class="font-weight-bold">{{ work_data.published_date }}</small>
             </p>
@@ -33,19 +39,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title_category h5 p-3 mb-0 category_title rounded text-dark">カテゴリ</div>
-                    {% for work_category in work_category_data %}
-                    <a class="text-light badge stretched-link font-weight-light" href="{% url 'work_category' work_category %}">
+        <div class="col-md-4">
+            <div class="title_category h5 p-2 tag_member category_title rounded text-light mb-3">カテゴリ</div>
+            <ul class="list-unstyled">
+                {% for work_category in work_category_data %}
+                <li>
+                    <a class="text-dark"
+                        href="{% url 'work_category' work_category %}">
                         {{ work_category.name }}
                     </a>
-                    {% endfor %}
-                </div>
-            </div>
+                    <hr class="w-100 my-3">
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
-
 {% endblock %}

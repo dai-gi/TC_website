@@ -66,11 +66,7 @@
                 <div class="card-body">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
-                    {% if user.is_authenticated %}
-                    <a class="btn btn-danger" href="{% url 'post_detail' post.id %}">詳細</a>
-                    {% else %}
                     <a class="btn btn-main text-light" href="{% url 'post_detail' post.id %}">詳細</a>
-                    {% endif %}
                     <small class="text-muted">{{ post.published_date }}</small>
                 </div>
             </div>

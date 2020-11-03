@@ -35,11 +35,27 @@ class PostListView(View):
         })
 
 
+class PostListMemberView(View):
+    def get(self, request, *args, **kwargs):
+        post_data_member = Post.objects.order_by("-id")
+        return render(request, 'app/post_list_member.html', {
+            'post_data_member': post_data_member
+        })
+
+
 class PostDetailView(View):
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.get(id=self.kwargs['pk'])
         return render(request, 'app/post_detail.html', {
             'post_data': post_data
+        })
+
+
+class PostDetailMemberView(View):
+    def get(self, request, *args, **kwargs):
+        post_data_member = Post.objects.get(id=self.kwargs['pk'])
+        return render(request, 'app/post_detail_member.html', {
+            'post_data_member': post_data_member
         })
 
 
@@ -119,6 +135,15 @@ class CategoryView(View):
         })
 
 
+class CategoryMemberView(View):
+    def get(self, request, *args, **kwargs):
+        category_data = Category.objects.get(name=self.kwargs['category'])
+        post_data_member = Post.objects.order_by('-id').filter(category=category_data)
+        return render(request, 'app/post_list_member.html', {
+            'post_data_member': post_data_member
+        })
+
+
 class PostDeleteView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.get(id=self.kwargs['pk'])
@@ -129,7 +154,7 @@ class PostDeleteView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         post_data = Post.objects.get(id=self.kwargs['pk'])
         post_data.delete()
-        return redirect('index')
+        return redirect('member')
 
 
 class WorkListView(View):

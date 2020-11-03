@@ -1,4 +1,4 @@
-{% extends 'app/base.html' %}
+{% extends 'app/base_member.html' %}
 
 {% block Image %}
 <div class="jumbotron jumbotron-fluid mb-0 d-flex justify-content-center mh-100">
@@ -36,11 +36,7 @@
                 <div class="card-body">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
-                    {% if user.is_authenticated %}
-                    <a class="btn btn-danger" href="{% url 'post_detail' post.id %}">詳細</a>
-                    {% else %}
-                    <a class="btn btn-main text-light" href="{% url 'post_detail' post.id %}">詳細</a>
-                    {% endif %}
+                    <a class="btn btn-member" href="{% url 'post_detail_member' post.id %}">詳細</a>
                     <small class="text-muted">{{ post.published_date }}</small>
                 </div>
             </div>
