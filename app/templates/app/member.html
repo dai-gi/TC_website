@@ -9,18 +9,36 @@
 {% endblock %}
 
 {% block work %}
-<section class="py-5 bg-light" id="work">
+<section class="py-1 bg-light" id="work">
     <div class="container">
-        <div class="text-center col-12 pb-5">
-            <h1 class="section-heading">案件情報</h1>
-            <hr class="w-25">
+        <div class="row my-5 justify-content-center border-light border rounded py-5 px-2">
+            <div class="text-center col-12 pb-5">
+                <h1>案件情報</h1>
+                <hr class="w-25">
+            </div>
+            <div class="row">
+                {% for work in work_data %}
+                <div class="card mb-3 px-0 shadow-sm col-12">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ work.title }}</h2>
+                        <p class="card-text">{{ work.content|truncatechars:100 }}</p>
+                        <div class="btn btn-member">
+                            <a class="text-light stretched-link" href="{% url 'work_detail' work.id %}">詳細</a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        {{ work.created|date }} by {{ work.author }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
 {% endblock %}
 
 {% block post %}
-<section class="" id="info">
+<section class="py-1" id="info">
     <div class="container">
         <div class="text-center my-5">
             <h1>BLOG</h1>
