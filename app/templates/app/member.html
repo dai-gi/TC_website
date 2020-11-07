@@ -11,14 +11,14 @@
 {% block work %}
 <section class="py-1 bg-light" id="work">
     <div class="container">
-        <div class="row my-3 justify-content-center border-light border rounded py-5 px-2">
+        <div class="row my-3 justify-content-center rounded py-5 px-2">
             <div class="text-center col-12 pb-3">
                 <h1>案件情報</h1>
                 <hr class="w-25">
             </div>
             <div class="row justify-content-md-center">
                 {% for work in work_data %}
-                <div class="card mb-3 px-0 shadow-sm col-8">
+                <div class="card mb-3 px-0 border border-light shadow-sm col-8">
                     <div class="container">
                         <div class="card-body row">
                             <div class="col-10">
@@ -28,9 +28,6 @@
                                 <a class="text-light stretched-link" href="{% url 'work_detail' work.id %}">詳細</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        {{ work.created|date }} by {{ work.author }}
                     </div>
                 </div>
                 {% endfor %}
@@ -50,15 +47,18 @@
         <div class="row mb-5 justify-content-center">
             {% if post_data %}
             {% for post in post_data %}
-            <div class="card col-md-3 my-3 mx-md-3">
+            <div class="card col-md-3 my-3 px-0 mx-md-3 shadow border border-0">
                 {% if post.image %}
                 <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
                 {% endif %}
-                <div class="card-body">
+                <div class="card-body border border-light">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
                     <a class="btn btn-member" href="{% url 'post_detail_member' post.id %}">詳細</a>
                     <small class="text-muted">{{ post.published_date }}</small>
+                </div>
+                <div class="card-footer p-2">
+                    by {{ post.author }}
                 </div>
             </div>
             {% endfor %}

@@ -186,6 +186,15 @@ thead {
     background-color: #621708;
 }
 
+.card .card_border {
+    border-color: #a51b00;
+}
+
+.card-footer {
+    background-color: #e2e0e0;
+    border: 3px solid #e2e0e0;
+}
+
 /* BLOG詳細 */
 
 
