@@ -29,49 +29,70 @@ body #wrapper {
     color: #fff;
     background-color: #03045e;
     border-color: #03045e;
+    text-decoration: none;
 }
 
 .btn-main:hover {
     color: #fff;
-    background-color: #0003c4;
-    border-color: #0003c4;
+    background-color: #030574;
+    border-color: #030574;
+    text-decoration: none;
 }
 
 .btn-member {
     color: #fff;
     background-color: #621708;
     border-color: #621708;
+    text-decoration: none;
 }
 
 .btn-member:hover {
     color: #fff;
     background-color: #86220e;
     border-color: #86220e;
+    text-decoration: none;
 }
 
 .btn-danger {
     color: #fff;
     background-color: #a51b00;
     border-color: #a51b00;
+    text-decoration: none;
 }
 
 .btn-danger:hover {
     color: #fff;
     background-color: #ca2200;
     border-color: #ca2200;
+    text-decoration: none;
 }
 
 .btn-warning {
     color: #fff;
     background-color: #ff9900;
     border-color: #ff9900;
+    text-decoration: none;
 }
 
 .btn-warning:hover {
     color: #fff;
     background-color: #fab82b;
     border-color: #fab82b;
+    text-decoration: none;
 }
+
+li .text-dark {
+    text-decoration: none;
+}
+
+.col-md-4 .text-white {
+    text-decoration: none;
+}
+
+.row .text-light {
+    text-decoration: none;
+}
+
 /* category */
 .category_tag {
     transform: translate(-2rem, 0rem) rotate(-5deg);
@@ -105,19 +126,23 @@ body #wrapper {
 /* tag */
 .tag_main {
     background-color: #03045e;
+    text-decoration: none;
 }
 
 .tag_member {
     background-color: #621708;
+    text-decoration: none;
 }
 
 /* NAVIBAR */
 .navbar_main {
     background-color: #010a5cda;
+    text-decoration: none;
 }
 
 .navbar_member {
     background-color: #621708e7;
+    text-decoration: none;
 }
 
 
@@ -188,11 +213,6 @@ thead {
 
 .card .card_border {
     border-color: #a51b00;
-}
-
-.card-footer {
-    background-color: #e2e0e0;
-    border: 3px solid #e2e0e0;
 }
 
 /* BLOG詳細 */

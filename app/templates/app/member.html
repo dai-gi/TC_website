@@ -18,15 +18,13 @@
             </div>
             <div class="row justify-content-md-center">
                 {% for work in work_data %}
-                <div class="card mb-3 px-0 border border-light shadow-sm col-8">
+                <div class="card mb-3 mx-2 shadow-sm col-8">
                     <div class="container">
                         <div class="card-body row">
-                            <div class="col-10">
+                            <div class="col-9">
                                 <span class="card-title align-top">{{ work.title }}</span>
                             </div>
-                            <div class="btn btn-member col-2">
-                                <a class="text-light stretched-link" href="{% url 'work_detail' work.id %}">詳細</a>
-                            </div>
+                            <a class="col-2 mr-1 btn btn-member text-light stretched-link" href="{% url 'work_detail' work.id %}">詳細</a>
                         </div>
                     </div>
                 </div>
@@ -47,17 +45,17 @@
         <div class="row mb-5 justify-content-center">
             {% if post_data %}
             {% for post in post_data %}
-            <div class="card col-md-3 my-3 px-0 mx-md-3 shadow border border-0">
+            <div class="card mb-3 mx-2 shadow-sm">
                 {% if post.image %}
                 <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
                 {% endif %}
-                <div class="card-body border border-light">
+                <div class="card-body">
                     <h6 class="card-title">{{ post.title|truncatechars:9 }}</h6>
                     <p>{{ post.category }}</p>
                     <a class="btn btn-member" href="{% url 'post_detail_member' post.id %}">詳細</a>
                     <small class="text-muted">{{ post.published_date }}</small>
                 </div>
-                <div class="card-footer p-2">
+                <div class="card-footer text-muted">
                     by {{ post.author }}
                 </div>
             </div>
