@@ -93,6 +93,10 @@ li .text-dark {
     text-decoration: none;
 }
 
+.hr_width {
+    width: 100px;
+}
+
 /* category */
 .category_tag {
     transform: translate(-2rem, 0rem) rotate(-5deg);
