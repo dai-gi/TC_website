@@ -32,16 +32,13 @@
                                 <a class="nav-link" href="{% url 'index'%}#TC">TCとは？</a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a class="nav-link" href="{% url 'index'%}#work">やっていること</a>
+                                <a class="nav-link" href="{% url 'index'%}#Q&A">Q&A</a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a class="nav-link" href="{% url 'index'%}#FAQ">FAQ</a>
+                                <a class="nav-link" href="{% url 'post_list'%}#Blog">BLOG</a>
                             </li>
                             <li class="nav-item ml-4">
-                                <a class="nav-link" href="{% url 'post_list'%}">BLOG</a>
-                            </li>
-                            <li class="nav-item ml-4">
-                                <a class="nav-link" href="/">お問い合わせ</a>
+                                <a class="nav-link" href="{% url 'index'%}#Contact">お問い合わせ</a>
                             </li>
                         </ul>
                     </div>
@@ -53,16 +50,12 @@
             {% block Image %}
             {% endblock %}
 
-            <!-- Company -->
-            {% block company %}
+            <!-- TC -->
+            {% block TC %}
             {% endblock %}
 
-            <!-- Business -->
-            {% block business %}
-            {% endblock %}
-
-            <!-- Work -->
-            {% block work %}
+            <!-- Q&A -->
+            {% block Q&A %}
             {% endblock %}
 
             <!-- Blog -->

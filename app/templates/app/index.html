@@ -9,20 +9,30 @@
 </div>
 {% endblock %}
 
-{% block company %}
-<section class="py-5" id="company">
+{% block TC %}
+<section class="py-5 bg-light" id="TC">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-6">
-                <img src="https://placehold.jp/300x300.png" alt="..." class="img-thumbnail" loading="lazy">
+        <div class="row justify-content-center">
+            <div class="col-12 mt-2 mb-5 text-center">
+                <h2>TCについて</h2>
+                <hr class="hr_width">
             </div>
-            <div class="col-6">
-                <div class="col-12 my-5">
-                    <h2>TCとは？</h2>
-                    <hr class="hr_width">
-                </div>
-                <div class="col-12 my-5">
-                    <h4>工事現場で荷揚げの仕事をやっています。</h4>
+            <div class="col-9 media">
+                <a href="#" class="mr-3">
+                    <img src="..." alt="親メディアの画像">
+                </a>
+                <div class="media-body">
+                    <h3 class="mt-0">TCとは？</h3>
+                    <h5>荷揚げ屋のチーム名です。</h5>
+                    <div class="media mt-5">
+                        <a href="#" class="mr-3">
+                            <img src="..." alt="子メディアの画像">
+                        </a>
+                        <div class="media-body">
+                            <h3 class="mt-0">やっていること</h3>
+                            <h5>主に、工事現場内で重量のある建築資機材を、使用する場所まで運んでいます。</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,24 +40,39 @@
 </section>
 {% endblock %}
 
-{% block business %}
-<section class="bg-light" id="business">
+{% block Q&A %}
+<section id="Q&A">
     <div class="container py-5">
-            <div class="row text-center">
-                <div class="col-6">
-                    <div class="col-12 my-5">
-                        <h2>やっていること</h2>
-                        <hr class="hr_width">
-                    </div>
-                    <div class="col-12 my-5">
-                        <h4>建築資材を所定の場所まで運んでいます。
-                        </h4>
-                    </div>
+        <div class="row justify-content-center">
+            <div class="col-12 mt-2 mb-5 text-center">
+                <h2>Q&A</h2>
+                <hr class="hr_width">
+            </div>
+            <div class="col-7 media">
+                <a href="#" class="mr-3">
+                    <img src="..." alt="親メディアの画像">
+                </a>
+                <div class="media-body">
+                    <h3 class="mt-0">TCとは？</h3>
+                    <h5>荷揚げ屋のチーム名です。</h5>
                 </div>
-                <div class="col-6">
-                    <div class="col-12 my-5">
-                        <img src="https://placehold.jp/300x300.png" alt="..." class="img-thumbnail" loading="lazy">
-                    </div>
+            </div>
+            <div class="col-7 media my-5">
+                <a href="#" class="mr-3">
+                    <img src="..." alt="親メディアの画像">
+                </a>
+                <div class="media-body">
+                    <h3 class="mt-0">TCとは？</h3>
+                    <h5>荷揚げ屋のチーム名です。</h5>
+                </div>
+            </div>
+            <div class="col-7 media">
+                <a href="#" class="mr-3">
+                    <img src="..." alt="親メディアの画像">
+                </a>
+                <div class="media-body">
+                    <h3 class="mt-0">TCとは？</h3>
+                    <h5>荷揚げ屋のチーム名です。</h5>
                 </div>
             </div>
         </div>
@@ -56,10 +81,10 @@
 {% endblock %}
 
 {% block post %}
-<section class="" id="info">
+<section class="py-5 bg-light" id="Blog">
     <div class="container">
         <div class="text-center my-5">
-            <h1>BLOG</h1>
+            <h2>BLOG</h2>
             <hr class="w-25">
         </div>
         <div class="row mb-5 justify-content-center">
@@ -86,7 +111,7 @@
 {% endblock %}
 
 {% block contact %}
-<section class="py-5 bg-light" id="contact">
+<section class="py-3" id="contact">
     <div class="container">
         <div class="row justify-content-center my-5">
             <div class="border py-5 px-4 col-3">
@@ -101,7 +126,7 @@
                 <h1 class="text-center">080-1234-5678</h1>
                 <p class="text-center my-4">受付時間：平日９時 ~ 17時</p>
                 <div class="d-flex justify-content-center">
-                    <a class="btn btn_blue text-light w-75 py-3" href="/">お問い合わせ</a>
+                    <a class="btn btn-main text-light w-75 py-3" href="/">お問い合わせ</a>
                 </div>
             </div>
         </div>
