@@ -16,17 +16,27 @@
             {% if keyword %}
             <h4 class="mb-4">「{{ keyword }}」の検索結果</h4>
             {% endif %}
-            <div class="row justify-content-md-center">
+            <div class="row">
                 {% for work in work_data %}
-                <div class="card mb-3 mx-2 shadow-sm col-12">
+                <div class="card mb-3 mx-2 shadow-sm col-6">
                     <div class="container">
-                        <div class="card-body row">
-                            <div class="col-9">
-                                <span class="card-title align-top">{{ work.title }}</span>
+                        <a class="h5 text-dark" href="{% url 'work_detail' work.id %}">
+                            <div class="row stretched-link">
+                                <div class="card-body text-center col-12">
+                                    <p class="h5">{{ work.title }}</p>
+                                    <hr>
+                                </div>
+                                <div class="col-8">
+                                    <p class="mt-0">TCとは？</p>
+                                    <p>荷揚げ屋のチーム名です。</p>
+                                    <h5 class="text-danger"><small class="text-dark">日当金額</small>{{ work.price }}<small
+                                            class="text-dark">円</small></h5>
+                                </div>
+                                <div class="col-4">
+                                    <img src="..." alt="作業内容で扱う資材の画像">
+                                </div>
                             </div>
-                            <a class="col-2 mr-1 btn btn-member text-light stretched-link"
-                                href="{% url 'work_detail' work.id %}">詳細</a>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 {% endfor %}
