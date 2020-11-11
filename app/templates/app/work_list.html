@@ -12,24 +12,25 @@
 {% block work %}
 <div class="container">
     <div class="row my-5 justify-content-center border-light border rounded py-5 px-2">
-        <div class="row col-8">
+        <div class="col-8">
             {% if keyword %}
             <h4 class="mb-4">「{{ keyword }}」の検索結果</h4>
             {% endif %}
-            {% for work in work_data %}
-            <div class="card mb-3 mx-2 shadow-sm">
-                <div class="card-body">
-                    <h2 class="card-title">{{ work.title }}</h2>
-                    <p class="card-text">{{ work.content|truncatechars:100 }}</p>
-                    <div class="btn btn_member">
-                        <a class="text-light stretched-link" href="{% url 'work_detail' work.id %}">詳細</a>
+            <div class="row justify-content-md-center">
+                {% for work in work_data %}
+                <div class="card mb-3 mx-2 shadow-sm col-12">
+                    <div class="container">
+                        <div class="card-body row">
+                            <div class="col-9">
+                                <span class="card-title align-top">{{ work.title }}</span>
+                            </div>
+                            <a class="col-2 mr-1 btn btn-member text-light stretched-link"
+                                href="{% url 'work_detail' work.id %}">詳細</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card-footer text-muted">
-                    {{ work.created|date }} by {{ work.author }}
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
         <div class="col-md-4">
             <div class="title_category h5 mb-0 p-2 tag_member category_title shadow-sm rounded text-light mb-3">カテゴリ
