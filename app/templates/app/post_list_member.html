@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text">{{ post.content|truncatechars:100 }}</p>
-                    <div class="">
+                    <div>
                         <a class="btn btn-member stretched-link" href="{% url 'post_detail_member' post.id %}">詳細</a>
                     </div>
                 </div>
