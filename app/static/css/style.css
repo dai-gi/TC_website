@@ -184,6 +184,14 @@ li .text-dark {
 }
 
 /* 案件 */
+.row .card {
+    width: 355px;
+}
+
+.container .h5 {
+    text-decoration: none;
+}
+
 thead {
     color: #fefcfb;
     background-color: #03045e;
