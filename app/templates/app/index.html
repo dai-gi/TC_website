@@ -9,82 +9,41 @@
 </div>
 {% endblock %}
 
-{% block TC %}
-<section class="py-5 bg-light" id="TC">
+{% block business %}
+<section class="py-5" id="business">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 mt-2 mb-5 text-center">
-                <h2>TCについて</h2>
+                <h1>業務内容</h1>
                 <hr class="hr_width">
             </div>
-            <div class="col-9 media">
-                <a href="#" class="mr-3">
-                    <img src="..." alt="親メディアの画像">
-                </a>
-                <div class="media-body">
-                    <h3 class="mt-0">TCとは</h3>
-                    <h5>少人数精鋭の荷揚げ屋チームです。</h5>
-                    <div class="media mt-5">
-                        <a href="#" class="mr-3">
-                            <img src="..." alt="子メディアの画像">
-                        </a>
-                        <div class="media-body">
-                            <h3 class="mt-0">取り扱う頻度の高い資材</h3>
-                            <div class="media my-4">
-                                <a href="#" class="mr-3">
-                                    <img src="..." alt="子メディアの画像">
-                                </a>
-                                <h5>SD</h5>
-                            </div>
-                            <div class="media my-4">
-                                <a href="#" class="mr-3">
-                                    <img src="..." alt="子メディアの画像">
-                                </a>
-                                <h5>給湯器</h5>
-                            </div>
-                            <p>※ その他の建築資機材も取り扱っています。</p>
-                        </div>
+            <div class="col-6">
+                <img class="rounded" src="https://placehold.jp/400x400.png" alt="...">
+            </div>
+            <div class="col-５ my-1">
+                <div class="media my-4">
+                    <img class="rounded d-flex" src="https://placehold.jp/80x80.png" alt="...">
+                    <div class="media-body ml-4">
+                        <h3>荷揚げ</h3>
+                        <p class="mb-0">給湯器、床材、枠材など、様々な物を扱います。</p>
+                        <small>※ 当日の物量変更は、別途料金がかかります。</small>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
-
-{% block Q&A %}
-<section id="Q&A">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-12 mt-2 mb-5 text-center">
-                <h2>Q&A</h2>
-                <hr class="hr_width">
-            </div>
-            <div class="col-7 media">
-                <a href="#" class="mr-3">
-                    <img src="..." alt="親メディアの画像">
-                </a>
-                <div class="media-body">
-                    <h3 class="mt-0 mb-4">荷揚げ屋とは</h3>
-                    <h5>主に重量物を取り扱い、それを所定の場所まで運ぶことを専門として仕事をしているもののことをいいます。</h5>
+                <div class="media my-5">
+                    <img class="rounded d-flex" src="https://placehold.jp/80x80.png" alt="...">
+                    <div class="media-body ml-4">
+                        <h3>取り付け</h3>
+                        <p class="mb-0">給湯器、SDなど、取り付けまで行います。</p>
+                        <small>※ 物によっては取り付けられない物もあります。</small>
+                    </div>
                 </div>
-            </div>
-            <div class="col-7 media my-5">
-                <a href="#" class="mr-3">
-                    <img src="..." alt="親メディアの画像">
-                </a>
-                <div class="media-body">
-                    <h3 class="mt-0 mb-4">SDとは</h3>
-                    <h5>荷揚げ屋のチーム名です。</h5>
-                </div>
-            </div>
-            <div class="col-7 media">
-                <a href="#" class="mr-3">
-                    <img src="..." alt="親メディアの画像">
-                </a>
-                <div class="media-body">
-                    <h3 class="mt-0 mb-4">TCとは？</h3>
-                    <h5>荷揚げ屋のチーム名です。</h5>
+                <div class="media my-4">
+                    <img class="rounded d-flex" src="https://placehold.jp/80x80.png" alt="...">
+                    <div class="media-body ml-4">
+                        <h3>手元</h3>
+                        <p class="mb-0">必要に応じて手元も行います。</p>
+                        <small>※ 作業内容によっては、ご希望に添えない場合がございます。</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,7 +55,7 @@
 <section class="py-5 bg-light" id="Blog">
     <div class="container">
         <div class="text-center my-5">
-            <h2>BLOG</h2>
+            <h1>BLOG</h1>
             <hr class="w-25">
         </div>
         <div class="row mb-5 justify-content-center">
@@ -127,13 +86,16 @@
     <div class="container">
         <div class="row justify-content-center my-5">
             <div class="border py-5 px-4 col-3 shadow-sm">
-                <h2 class="text-center">お問い合わせ</h2>
-                <hr class="text-center w-25 my-4">
+                <h2 class="text-center">Contact</h2>
+                <div class="text-center">
+                    <small>お問い合わせ</small>
+                </div>
+                <hr class="text-center w-25 mb-3">
                 <p class="text-center">ご相談・ご質問等ございましたら、お気軽にご相談ください</p>
             </div>
             <div class="border contact pt-5 ml-1 col-6 shadow-sm">
-                <h1 class="text-center">080-1234-5678</h1>
-                <p class="text-center my-4">受付時間：平日９時 ~ 17時</p>
+                <h1 class="text-center">080-XXXX-XXXX</h1>
+                <p class="text-center my-4">受付時間：平日９:00 ~ 17:00</p>
                 <div class="d-flex justify-content-center">
                     <a class="btn btn-main text-light w-75 py-3" href="/">お問い合わせ</a>
                 </div>
