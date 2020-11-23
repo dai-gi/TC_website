@@ -52,7 +52,7 @@
 {% endblock %}
 
 {% block post %}
-<section class="py-5 bg-light" id="Blog">
+<section class="pt-5 pb-1 bg-light" id="Blog">
     <div class="container">
         <div class="text-center my-5">
             <h1>BLOG</h1>
@@ -60,7 +60,7 @@
         </div>
         <div class="row mb-5 justify-content-center">
             {% if post_data %}
-            {% for post in post_data %}
+            {% for post in pages %}
             <div class="card col-md-3 my-3 mx-3 shadow-sm">
                 {% if post.image %}
                 <img class="card-img-top index-img" src="{{ post.image.url }}" alt="">
@@ -76,7 +76,41 @@
             {% else %}
             <h3 class="col-12 text-center">新しい投稿はありません</h3>
             {% endif %}
+            <div class="col-12 my-5">
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        {% if pages.has_other_pages %}
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                {% if pages.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ pages.previous_page_number }}#Blog" aria-label="前">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% for i in pages.paginator.page_range %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}#Blog">{{ i }}</a></li>
+                                {% endfor %}
+                                {% if pages.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ pages.next_page_number }}#Blog" aria-label="次">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- {% if page_obj %}
+        <div class="bg-dark">
+            <a href="?page={{ page_obj.previous_page_number }}">前へ</a>
+        </div>
+        {% endif %} -->
     </div>
 </section>
 {% endblock %}

@@ -7,13 +7,26 @@ from django.utils import timezone
 from django.db.models import Q
 from functools import reduce
 from operator import and_
+from django.core.paginator import Paginator
 
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.order_by("-id")
+        paginator = Paginator(post_data, 1)
+        page = request.GET.get('page', 1)
+        pages = paginator.page(2)
+
+        try:
+            pages = paginator.page(page)
+        except PageNotAnInteger:
+            pages = paginator.page(1)
+        except EmptyPage:
+            pages = paginator.page(1)   
+
         return render(request, 'app/index.html', {
             'post_data': post_data,
+            'pages':pages,
         })
 
 
@@ -33,7 +46,6 @@ class PostListView(View):
         return render(request, 'app/post_list.html', {
             'post_data': post_data
         })
-
 
 class PostListMemberView(View):
     def get(self, request, *args, **kwargs):
