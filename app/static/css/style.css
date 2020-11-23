@@ -237,7 +237,11 @@ footer {
     margin-top: auto;
 }
 
-.footer_main {
+.footer_nav {
+    background-color: #4041a3;
+}
+
+.f_color {
     background-color: #03045e;
 }
 
