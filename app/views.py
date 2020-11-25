@@ -1,5 +1,10 @@
-from .forms import PostForm, WorkForm
+from .forms import PostForm, WorkForm, ContactForm
 from .models import Post, Work, Category, WorkCategory
+from django.conf import settings
+from django.core.mail import BadHeaderError, EmailMessage
+from django.http import HttpResponse
+import textwrap
+import re
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -37,6 +42,67 @@ class MemberView(View):
         return render(request, 'app/member.html', {
             'post_data': post_data,
             'work_data': work_data,
+        })
+
+
+class ContactView(View):
+    def get(self, request, *args, **kwargs):
+        form = form = ContactForm(request.POST or None)
+
+        return render(request, 'app/contact.html', {
+            'form': form
+        })
+    
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST or None)
+
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            if re.search('[ぁ-ん]', message) == None:
+                return redirect('thanks')
+
+            subject = 'お問い合わせありがとうございます。'
+            content = textwrap.dedent('''
+                ※このメールはシステムからの自動返信です。
+                
+                {name} 様
+                
+                お問い合わせありがとうございました。
+                以下の内容でお問い合わせを受け付けいたしました。
+                内容を確認させていただき、ご返信させて頂きますので、少々お待ちください。
+                
+                --------------------
+                ■お名前
+                {name}
+                
+                ■メールアドレス
+                {email}
+                
+                ■メッセージ
+                {message}
+                --------------------
+                ''').format(
+                    name=name,
+                    email=email,
+                    message=message
+                )
+
+            to_list = [email]
+            bcc_list = [settings.EMAIL_HOST_USER]
+
+            try:
+                message = EmailMessage(subject=subject, body=content, to=to_list, bcc=bcc_list)
+                message.send()
+            except BadHeaderError:
+                return HttpResponse("無効なヘッダが検出されました。")
+
+            return redirect('thanks')
+
+        return render(request, 'app/contact.html', {
+            'form': form
         })
 
 
