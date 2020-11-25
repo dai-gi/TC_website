@@ -106,6 +106,10 @@ class ContactView(View):
         })
 
 
+class ThanksView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'app/thanks.html')
+
 class PostListView(View):
     def get(self, request, *args, **kwargs):
         post_data = Post.objects.order_by("-id")
