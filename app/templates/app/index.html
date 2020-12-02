@@ -59,7 +59,6 @@
             <hr class="w-25">
         </div>
         <div class="row mb-5 justify-content-center">
-            {% if post_data %}
             {% for post in pages %}
             <div class="card col-md-3 my-3 mx-3 shadow-sm">
                 {% if post.image %}
@@ -73,9 +72,6 @@
                 </div>
             </div>
             {% endfor %}
-            {% else %}
-            <h3 class="col-12 text-center">新しい投稿はありません</h3>
-            {% endif %}
             <div class="col-12 my-5">
                 <div class="row justify-content-center">
                     <div class="col-2">
