@@ -131,6 +131,7 @@ LOGIN_REDIRECT_URL = 'member'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# デプロイ設定
 DEBUG = False
 
 try:
