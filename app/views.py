@@ -9,5 +9,4 @@ class IndexView(View):
 
         return render(request, 'app/index.html', {
             'post_data': post_data,
-            'pages':pages,
         })
