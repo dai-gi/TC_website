@@ -15,38 +15,68 @@
     </head>
     <body>
         <header>
-            <div class="fixed"></div>
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-dark">
-                    <a href="" class="navbar-brand">TC</a>
-                    <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div id="menu" class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav w-50 justify-content-around">
-                            <li class="nav-item"><a href="" class="nav-link">サービス</a></li>
-                            <li class="nav-item"><a href="" class="nav-link">料金</a></li>
-                            <li class="nav-item"><a href="" class="nav-link">お問い合わせ</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <h1 class="font-weight-lighter text-white d-flex align-items-center justify-content-center">Welcome!</h1>
+            <div class="fixed">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md">
+                        <a href="" class="navbar-brand">TC</a>
+                        <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div id="menu" class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav w-50 justify-content-around">
+                                <li class="nav-item"><a href="" class="nav-link">サービス</a></li>
+                                <li class="nav-item"><a href="" class="nav-link">料金</a></li>
+                                <li class="nav-item"><a href="" class="nav-link">お問い合わせ</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <h1 class="font-weight-lighter d-flex align-items-center justify-content-center m-0"> Welcome! </h1>
+                </div>
             </div>
         </header>
-        <section id="service">
-            <div class="container">
-                <h1 class="font-weight-lighter d-flex align-items-center justify-content-center display-3">Service</h1>
-            </div>
+        <!------------- Service ------------->
+        <div class="container">
+            <section id="service">
+                <div class="row d-flex align-content-center">
+                    <h1 class="col-12 font-weight-lighter d-flex align-items-center justify-content-center display-3 ">
+                        Service </h1>
+                    <article class="col-12 d-flex align-items-start justify-content-center">
+                        <div class="service_rectangle">
+                        </div>
+                    </article>
+                    <div class="col-md-6 d-flex justify-content-center mb-5 p-0">
+                        <div class="card">
+                            <img class="card-img" src="https://placehold.jp/300x240.png" alt="Card image">
+                            <div class="card-img-overlay">
+                                <p class="card-text">資材の搬入搬出</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center mb-5 p-0">
+                        <div class="card">
+                            <img class="card-img" src="https://placehold.jp/300x240.png" alt="Card image">
+                            <div class="card-img-overlay">
+                                <p class="card-text">施工の手元</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center my-5 p-0 jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class="display-3">Fluid jumbotron</h1>
+                            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of
+                                its parent.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!------------- Price ------------->
+        <section id="price">
+            <h1 class="font-weight-lighter d-flex align-items-center justify-content-center display-3">Price</h1>
         </section>
-        <section id="Price">
-            <div class="container">
-                <h1 class="font-weight-lighter d-flex align-items-center justify-content-center display-3">Price</h1>
-            </div>
-        </section>
-        <section id="Contact">
-            <div class="container">
-                <h1 class="font-weight-lighter d-flex align-items-center justify-content-center display-3">Contact</h1>
-            </div>
+        <!------------- Contact ------------->
+        <section id="contact">
+            <h1 class="font-weight-lighter d-flex align-items-center justify-content-center display-3">Contact</h1>
         </section>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
