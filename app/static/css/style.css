@@ -7,8 +7,8 @@
   font-size: 25px;
 }
 
-.fab {
-  font-size: 25px;
+.fa-circle {
+  font-size: 30px;
 }
 
 .jumbotron {
@@ -23,14 +23,13 @@
   font-size: 10vw;
 }
 
-figure {
+/* figure {
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 100%;
   margin: 0 !important;
 }
 .fixed-wrap {
-  clip: rect(0, auto, auto, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -39,31 +38,25 @@ figure {
 }
 #fixed {
   background-image: url("img/section-1.png");
+  background-color:aqua;
   position: fixed;
   display: block;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center center;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
-}
+} */
 
 /* .fixed {
   height: 60vw;
-  background: url("./../img/top_img.png");
+  background: url("./../img/section-1.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
   filter: brightness(95%);
-} */
+}
 
-
-
-/* .fixed::after {
+.fixed::after {
   content: '';
   background: inherit;
   -webkit-filter: blur(2px);
@@ -78,96 +71,25 @@ figure {
   bottom: -1px;
 } */
 
-/* ========= Navigation ========= */
-/* .navbar-brand {
-  font-size: 2rem;
+/* ------------ Section - 1 ------------ */
+#background {
+  height: 30vw;
+  background-color: rgba(70, 70, 70, 0.767);
+}
+
+#section-1 .col-12 {
   color: #fff;
+  height: 7vw;
 }
 
-.navbar-brand:hover {
-  color: #fff;
+.far {
+  font-size: 10vw;
 }
 
-button:focus {
-  outline: 0;
+.fa-images {
+  color: rgba(0, 0, 0, 0.205);
 }
 
-i {
-  color: #fff;
-  font-size: 1.7rem;
-}
-
-.nav-item {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.nav-item::after {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s;
-}
-
-.nav-item:hover::after {
-  bottom: 1px;
-  opacity: 1;
-  visibility: visible;
-}
-
-.nav-link {
-  color: #fff;
-}
-
-.nav-link:hover {
-  color: #fff;
-}
-
-/* ========= Welcome text ========= */
-/* header .font-weight-lighter {
-  height: 25vw;
-  font-size: 8vw;
-  color: #ffffff;
-} */
-
-/* ------------ Section ------------ */
-/* #service .display-3 {
-  height: 15vw;
-  margin: 0;
-  font-size: 5vw;
-}
-
-article {
-  height: 17vw;
-}
-
-.service_rectangle {
-  height: 10vw;
-  width: 30vw;
-  background-color: rgba(77, 77, 77, 0.534);
-  border-radius: 2px;
-}
-
-.card {
-  box-shadow: 0 3px 10px 1px rgba(0,0,0,.48);
-}
-
-.card-text {
-  font-size: 20px;
-}
-
-.jumbotron {
-  background: url("https://placehold.jp/800x500.png");
-  background-size: cover;
-  background-position: center center;
-} */
 
 /* ------------ Price ------------ */
 /* #price .display-3 {
