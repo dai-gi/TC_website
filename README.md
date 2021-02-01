@@ -1,1 +1,1 @@
-# share_info_app
+# django_landing_page
