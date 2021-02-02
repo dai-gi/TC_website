@@ -1,6 +1,22 @@
 /* ------------ Header ------------ */
 .nav {
-  background-color: #8a8a8a;
+  background-color: #eeeeee;
+}
+
+.navbar-brand {
+  color: rgba(87, 87, 87, 0.692);
+}
+
+.navbar-brand:hover {
+  color: rgba(87, 87, 87, 0.692);
+}
+
+.nav-link {
+  color: rgba(87, 87, 87, 0.692);
+}
+
+.nav-link:hover {
+  color: rgba(146, 146, 146, 0.692);
 }
 
 .fas {
@@ -13,13 +29,15 @@
 
 .jumbotron {
   height: 25vw;
+  background-color: rgba(139, 139, 139, 0.767);
 }
+
 .jumbotron .container {
   height: 15vw;
 }
 
 .jumbotron .align-self-center {
-  color: rgba(121, 120, 120, 0.363);
+  color: rgba(255, 255, 255, 0.692);
   font-size: 10vw;
 }
 
@@ -71,18 +89,19 @@
   bottom: -1px;
 } */
 
-/* ------------ Section - 1 ------------ */
-#background {
-  height: 30vw;
-  background-color: rgba(70, 70, 70, 0.767);
+/* ------------ Section-1 ------------ */
+.background-1 {
+  position: relative;
+  height: 25vw;
+  background-color: rgba(112, 112, 112, 0.767);
 }
 
 #section-1 .col-12 {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.692);
   height: 7vw;
 }
 
-.far {
+.d-flex .far {
   font-size: 10vw;
 }
 
@@ -90,21 +109,80 @@
   color: rgba(0, 0, 0, 0.205);
 }
 
+.rectangle {
+  position: absolute;
+  background-color: rgba(42, 42, 42, 0.589);
+  height: 10vw;
+  width: 25vw;
+  top: 8vw;
+  left: 37vw;
+  color: rgba(255, 255, 255, 0.692);
+}
 
-/* ------------ Price ------------ */
-/* #price .display-3 {
-  height: 15vw;
-  margin: 0;
-  font-size: 5vw;
-  background-color: #E0E0E0;
-  box-shadow: 0 3px 10px 1px rgba(0,0,0,.48);
-} */
+.rectangle .align-self-center {
+  font-size: 25px;
+}
 
-/* ------------ Contact ------------ */
-/* #contact .display-3 {
-  height: 15vw;
-  margin: 0;
-  font-size: 5vw;
-} */
+.container .d-flex {
+  color: rgba(0, 0, 0, 0.205);
+}
 
-/* ------------ Media Queries ------------ */ 
+#background-2 {
+  height: 50vw;
+  background-color: rgb(250, 250, 250);
+}
+
+svg {
+  position: relative;
+}
+
+.card .far {
+  position: absolute;
+  top: 1.5vw;
+  left: 3.5vw;
+  font-size: 6vw;
+}
+
+.section-item {
+  height: 23vw;
+  width: 40vw;
+  border-radius: 2px;
+}
+
+/* ------------ Section-2 ------------ */
+#section-2 {
+  height: 35vw;
+  background-color: rgb(228, 228, 228);
+}
+
+#background-3 h1 {
+  color: rgba(71, 71, 71, 0.767);
+  height: 10vw;
+}
+
+/* ------------ Section-3 ------------ */
+#section-3 .col-12 {
+  color: rgba(255, 255, 255, 0.692);
+  height: 7vw;
+}
+
+#section-3 .background-1 {
+  height: 35vw;
+}
+
+#section-3 .rectangle {
+  height: 25vw;
+  width: 35vw;
+  left: 32vw;
+}
+
+/* ------------ Footer ------------ */
+
+footer {
+  height: 3.5vw;
+  background-color: #eeeeee;
+}
+
+footer h4 {
+  color: rgba(87, 87, 87, 0.692);
+}
