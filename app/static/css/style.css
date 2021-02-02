@@ -97,7 +97,7 @@
 }
 
 #section-1 .col-12 {
-  color: rgba(255, 255, 255, 0.692);
+  /* color: rgba(255, 255, 255, 0.692); */
   height: 7vw;
 }
 
@@ -123,7 +123,7 @@
   font-size: 25px;
 }
 
-.container .d-flex {
+.container h3 {
   color: rgba(0, 0, 0, 0.205);
 }
 
@@ -176,6 +176,17 @@ svg {
   left: 32vw;
 }
 
+#section-3 .align-self-center {
+  width: 20vw;
+}
+
+.mb-3 .form-control {
+  height: 120px;
+}
+
+/* .form-group button {
+  background-color: rgb(49, 49, 49);
+} */
 /* ------------ Footer ------------ */
 
 footer {
