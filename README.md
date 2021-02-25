@@ -1,1 +1,1 @@
-# django_landing_page
+# Contents are being changed
